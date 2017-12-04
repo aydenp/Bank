@@ -11,6 +11,7 @@
 		C31107CF1FD507B600ABF56B /* Account+Transactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31107CE1FD507B600ABF56B /* Account+Transactions.swift */; };
 		C31107D11FD51C3700ABF56B /* HairlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31107D01FD51C3700ABF56B /* HairlineView.swift */; };
 		C31107D31FD51C4F00ABF56B /* StatusBarOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31107D21FD51C4F00ABF56B /* StatusBarOverlayView.swift */; };
+		C31107D51FD52F0200ABF56B /* RangeSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31107D41FD52F0200ABF56B /* RangeSegmentedControl.swift */; };
 		C316128E1FD48B5D000EC5ED /* InstitutionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C316128D1FD48B5D000EC5ED /* InstitutionResponse.swift */; };
 		C31612901FD48B7E000EC5ED /* Institution.swift in Sources */ = {isa = PBXBuildFile; fileRef = C316128F1FD48B7E000EC5ED /* Institution.swift */; };
 		C31612961FD4EDB9000EC5ED /* NSAttributedString+LargestFontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31612951FD4EDB9000EC5ED /* NSAttributedString+LargestFontSize.swift */; };
@@ -57,6 +58,7 @@
 		C31107CE1FD507B600ABF56B /* Account+Transactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account+Transactions.swift"; sourceTree = "<group>"; };
 		C31107D01FD51C3700ABF56B /* HairlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HairlineView.swift; sourceTree = "<group>"; };
 		C31107D21FD51C4F00ABF56B /* StatusBarOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarOverlayView.swift; sourceTree = "<group>"; };
+		C31107D41FD52F0200ABF56B /* RangeSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeSegmentedControl.swift; sourceTree = "<group>"; };
 		C316128D1FD48B5D000EC5ED /* InstitutionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstitutionResponse.swift; sourceTree = "<group>"; };
 		C316128F1FD48B7E000EC5ED /* Institution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Institution.swift; sourceTree = "<group>"; };
 		C31612951FD4EDB9000EC5ED /* NSAttributedString+LargestFontSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+LargestFontSize.swift"; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				C3CBCABC1FD4767A00010AA8 /* AccountHeaderView.swift */,
 				C3CBCABA1FD469B900010AA8 /* BackgroundGradientView.swift */,
 				C31107D21FD51C4F00ABF56B /* StatusBarOverlayView.swift */,
+				C31107D41FD52F0200ABF56B /* RangeSegmentedControl.swift */,
 				C3CBCAB71FD461B600010AA8 /* Utility */,
 			);
 			path = Views;
@@ -387,6 +390,7 @@
 				C3CBCAA71FD3186700010AA8 /* ViewController+Status.swift in Sources */,
 				C3F578021FD2DD8C0017EE17 /* PlaidResponse.swift in Sources */,
 				C3BCF72A1FCF5C130010497E /* ViewController.swift in Sources */,
+				C31107D51FD52F0200ABF56B /* RangeSegmentedControl.swift in Sources */,
 				C3CBCA951FD3075D00010AA8 /* AccessTokenExchangeResponse.swift in Sources */,
 				C3CBCAAB1FD3663F00010AA8 /* PlaidAPI+Transactions.swift in Sources */,
 				C3CBCAC11FD4895000010AA8 /* PaginatingPlaidResponse.swift in Sources */,

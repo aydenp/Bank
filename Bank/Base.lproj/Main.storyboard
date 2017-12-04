@@ -151,19 +151,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="BCK-rc-BfJ" customClass="AccountHeaderView" customModule="Bank" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="360"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="370"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="drY-yl-DdM">
-                                    <rect key="frame" x="0.0" y="192.5" width="375" height="167.5"/>
+                                    <rect key="frame" x="0.0" y="192.5" width="375" height="177.5"/>
                                     <subviews>
-                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="abw-PF-ErW">
-                                            <rect key="frame" x="177" y="74" width="20" height="20"/>
-                                        </activityIndicatorView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NyN-jc-QkS">
+                                            <rect key="frame" x="0.0" y="-0.5" width="375" height="134"/>
+                                            <subviews>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="abw-PF-ErW">
+                                                    <rect key="frame" x="177.5" y="57.5" width="20" height="20"/>
+                                                </activityIndicatorView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="abw-PF-ErW" firstAttribute="centerY" secondItem="NyN-jc-QkS" secondAttribute="centerY" id="D98-wx-emL"/>
+                                                <constraint firstItem="abw-PF-ErW" firstAttribute="centerX" secondItem="NyN-jc-QkS" secondAttribute="centerX" id="d82-KF-4Ap"/>
+                                            </constraints>
+                                        </view>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Hae-2f-zgd" customClass="RangeSegmentedControl" customModule="Bank" customModuleProvider="target">
+                                            <rect key="frame" x="14" y="143.5" width="347" height="29"/>
+                                            <segments>
+                                                <segment title="Value 1"/>
+                                                <segment title="Value 2"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="segmentedControlValueChanged:" destination="BCK-rc-BfJ" eventType="valueChanged" id="ijd-HJ-ofQ"/>
+                                            </connections>
+                                        </segmentedControl>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="abw-PF-ErW" firstAttribute="centerX" secondItem="drY-yl-DdM" secondAttribute="centerX" id="Vl5-L5-WtE"/>
-                                        <constraint firstItem="abw-PF-ErW" firstAttribute="centerY" secondItem="drY-yl-DdM" secondAttribute="centerY" id="njA-Hm-ujt"/>
+                                        <constraint firstAttribute="trailing" secondItem="Hae-2f-zgd" secondAttribute="trailing" constant="14" id="3hT-lk-bvd"/>
+                                        <constraint firstAttribute="trailing" secondItem="NyN-jc-QkS" secondAttribute="trailing" id="8qu-Jd-be2"/>
+                                        <constraint firstItem="Hae-2f-zgd" firstAttribute="leading" secondItem="drY-yl-DdM" secondAttribute="leading" constant="14" id="AwD-Mw-DBK"/>
+                                        <constraint firstItem="Hae-2f-zgd" firstAttribute="top" secondItem="NyN-jc-QkS" secondAttribute="bottom" constant="10" id="C9n-WW-FPe"/>
+                                        <constraint firstAttribute="bottom" secondItem="Hae-2f-zgd" secondAttribute="bottom" constant="6" id="HbN-UD-2hL"/>
+                                        <constraint firstItem="NyN-jc-QkS" firstAttribute="leading" secondItem="drY-yl-DdM" secondAttribute="leading" id="PBP-fy-U27"/>
+                                        <constraint firstItem="NyN-jc-QkS" firstAttribute="top" secondItem="drY-yl-DdM" secondAttribute="top" id="T3M-1k-sNS"/>
                                     </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UDC-Ph-GPI">
@@ -226,8 +250,9 @@
                             </constraints>
                             <connections>
                                 <outlet property="amountLabel" destination="KUA-aH-omm" id="Q2X-oC-uXQ"/>
-                                <outlet property="chartContainerView" destination="drY-yl-DdM" id="uZO-aA-w7i"/>
+                                <outlet property="chartContainerView" destination="NyN-jc-QkS" id="lzB-Lr-cfK"/>
                                 <outlet property="chartLoadingView" destination="abw-PF-ErW" id="mFm-e9-giY"/>
+                                <outlet property="chartSegmentedControl" destination="Hae-2f-zgd" id="wiV-3i-Ttn"/>
                                 <outlet property="infoStackView" destination="UDC-Ph-GPI" id="Cqz-6j-UcJ"/>
                                 <outlet property="institutionLabel" destination="5Gl-gL-Tu5" id="TKl-d7-QwK"/>
                                 <outlet property="nameLabel" destination="Plo-Ia-DOK" id="W3J-qN-XBK"/>
@@ -235,12 +260,12 @@
                             </connections>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="5ty-Ac-eji">
-                            <rect key="frame" x="0.0" y="432" width="375" height="1"/>
+                            <rect key="frame" x="0.0" y="442" width="375" height="1"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Transaction" id="f32-jP-FIA" customClass="TransactionCell" customModule="Bank" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="388" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="398" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f32-jP-FIA" id="zc7-a0-ArG">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>

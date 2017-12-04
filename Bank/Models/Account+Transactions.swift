@@ -13,12 +13,13 @@ extension Account {
         return SessionDataStorage.shared.transactions(for: self)
     }
     
-    func getBalanceHistoricalData(from startDate: Date, completionHandler: @escaping ([(Date, Double)]) -> Void) {
+    func getBalanceHistoricalData(from startDate: Date? = nil, completionHandler: @escaping ([(Date, Double)]) -> Void) {
         OperationQueue().addOperation {
-            let transactions = self.transactions
+            // Get transactions, oldest first
+            let transactions = self.transactions.sorted { $0.date < $1.date }
             var values = [(Date, Double)]()
-            var currentDate = startDate
             let now = Date()
+            var currentDate = startDate ?? transactions.first?.date ?? now
             var currentBalance = self.displayBalance
             // Loop through all dates between the start date and now
             while currentDate <= now {

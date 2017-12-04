@@ -29,6 +29,8 @@ class SessionDataStorage {
         }
     }
     
+    var selectedChartRange: AccountHeaderView.ChartViewRange = .defaultOption
+    
     func transactions(for account: Account) -> [Transaction] {
         return transactions?.filter { $0.accountID == account.id } ?? []
     }
