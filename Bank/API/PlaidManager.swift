@@ -110,14 +110,14 @@ extension PlaidManager {
 extension PlaidManager {
     /// Information about the current Plaid API being used by the app.
     struct PlaidInfo {
-        let publicKey: String, secret: String, clientID: String
+        let publicKey: String, secret: String, clientID: String, environment: Environment
         
         var baseURL: String {
-            return "https://sandbox.plaid.com/"
+            return "https://\(environment).plaid.com/"
         }
         
         var configuration: PLKConfiguration {
-            let config = PLKConfiguration(key: publicKey, env: PLKEnvironment.sandbox, product: .transactions)
+            let config = PLKConfiguration(key: publicKey, env: environment.linkEnvironment, product: .transactions)
             config.clientName = "Bank for iOS"
             return config
         }
@@ -125,13 +125,25 @@ extension PlaidManager {
         fileprivate func createAPI() -> PlaidAPI {
             return PlaidAPI(rootServerURL: baseURL, clientID: clientID, secret: secret)
         }
+        
+        enum Environment: String {
+            case development, sandbox, production
+            
+            var linkEnvironment: PLKEnvironment {
+                switch self {
+                case .development: return .development
+                case .sandbox: return .sandbox
+                case .production: return .production
+                }
+            }
+        }
     }
     
     var info: PlaidInfo {
         // Read Plaid.plist from main bundle
         guard let plistURL = Bundle.main.url(forResource: "Plaid", withExtension: "plist"), let plistData = try? Data(contentsOf: plistURL), let info = (try? PropertyListSerialization.propertyList(from: plistData, options: [], format: nil)) as? [String: String] else { fatalError("Invalid or non-existant Plaid info .plist file was provided.") }
         // Get configuration from Plaid.plist
-        guard let key = info["publicKey"], let clientID = info["clientID"], let secret = info["secret"] else { fatalError("Couldn't get required Plaid API Info from Info.plist") }
-        return PlaidInfo(publicKey: key, secret: secret, clientID: clientID)
+        guard let key = info["publicKey"], let clientID = info["clientID"], let secret = info["secret"], let env = info["environment"], let environment = PlaidInfo.Environment(rawValue: env) else { fatalError("Couldn't get required Plaid API Info from Info.plist") }
+        return PlaidInfo(publicKey: key, secret: secret, clientID: clientID, environment: environment)
     }
 }

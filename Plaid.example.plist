@@ -8,5 +8,7 @@
 	<string>CLIENTIDHERE</string>
 	<key>publicKey</key>
 	<string>PUBLICKEYHERE</string>
+	<key>environment</key>
+	<string>development</string>
 </dict>
 </plist>
