@@ -14,6 +14,7 @@ class AccountHeaderView: UIView {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var institutionLabel: UILabel!
     @IBOutlet weak var chartContainerView: UIView!
+    @IBOutlet weak var chartLoadingView: UIActivityIndicatorView!
     var hasAwaken = false
     var chart: Chart!
     
@@ -38,11 +39,6 @@ class AccountHeaderView: UIView {
         NotificationCenter.default.addObserver(self, selector: #selector(setupData), name: PeriodicFetchDataStorage.shared.institutions.dataChangedNotification, object: nil)
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        setupChart()
-    }
-    
     var account: Account? {
         didSet {
             if hasAwaken { setupData() }
@@ -58,10 +54,16 @@ class AccountHeaderView: UIView {
     
     private func setupChart() {
         chart.removeAllSeries()
-        if let chartData = account?.balanceHistoricalData(from: Date().addingTimeInterval(-60 * 60 * 24 * 30)) {
-            let series = ChartSeries(chartData.map { Float($0) })
-            series.color = .gradientColor(from: Colours.lighterMain, to: Colours.main, height: chartContainerView.bounds.height)
-            chart.add(series)
+        chartLoadingView.stopAnimating()
+        guard let account = account else { return }
+        chartLoadingView.startAnimating()
+        account.getBalanceHistoricalData(from: Date().addingTimeInterval(-60 * 60 * 24 * 30)) { (data) in
+            DispatchQueue.main.async {
+                let series = ChartSeries(data: data.map { (x: Float($0.0.timeIntervalSinceReferenceDate), y: Float($0.1)) })
+                series.color = .gradientColor(from: Colours.lighterMain, to: Colours.main, height: self.chartContainerView.bounds.height)
+                self.chart.add(series)
+                self.chartLoadingView.stopAnimating()
+            }
         }
     }
 }

@@ -156,6 +156,15 @@
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="drY-yl-DdM">
                                     <rect key="frame" x="0.0" y="197.5" width="375" height="162.5"/>
+                                    <subviews>
+                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="abw-PF-ErW">
+                                            <rect key="frame" x="177" y="71.5" width="20" height="20"/>
+                                        </activityIndicatorView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="abw-PF-ErW" firstAttribute="centerX" secondItem="drY-yl-DdM" secondAttribute="centerX" id="Vl5-L5-WtE"/>
+                                        <constraint firstItem="abw-PF-ErW" firstAttribute="centerY" secondItem="drY-yl-DdM" secondAttribute="centerY" id="njA-Hm-ujt"/>
+                                    </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="UDC-Ph-GPI">
                                     <rect key="frame" x="20" y="60" width="335" height="117.5"/>
@@ -201,6 +210,7 @@
                             <connections>
                                 <outlet property="amountLabel" destination="KUA-aH-omm" id="Q2X-oC-uXQ"/>
                                 <outlet property="chartContainerView" destination="drY-yl-DdM" id="uZO-aA-w7i"/>
+                                <outlet property="chartLoadingView" destination="abw-PF-ErW" id="mFm-e9-giY"/>
                                 <outlet property="institutionLabel" destination="5Gl-gL-Tu5" id="TKl-d7-QwK"/>
                                 <outlet property="nameLabel" destination="Plo-Ia-DOK" id="W3J-qN-XBK"/>
                             </connections>
