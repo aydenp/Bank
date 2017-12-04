@@ -54,8 +54,10 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource, NoAc
         }
         setViewControllers((SessionDataStorage.shared.accounts?.count ?? 0) > 0 ? [getViewController(for: 0)] : [getNoAccountsViewController()], direction: .forward, animated: false, completion: nil)
         dataSource = nil
-        dataSource = self
-        isSwipingEnabled = SessionDataStorage.shared.accounts?.count ?? 0 > 1
+        // Only re-enable data source if we have more than one item (as no data source means no horizontal scrolling)
+        if SessionDataStorage.shared.accounts?.count ?? 0 > 1 {
+            dataSource = self
+        }
         determineStatus()
     }
     
