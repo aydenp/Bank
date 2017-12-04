@@ -158,10 +158,10 @@
                                     <rect key="frame" x="0.0" y="192.5" width="375" height="181.5"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NyN-jc-QkS">
-                                            <rect key="frame" x="0.0" y="-0.5" width="375" height="138"/>
+                                            <rect key="frame" x="0.0" y="-0.5" width="375" height="134"/>
                                             <subviews>
                                                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="abw-PF-ErW">
-                                                    <rect key="frame" x="177.5" y="59.5" width="20" height="20"/>
+                                                    <rect key="frame" x="177.5" y="57.5" width="20" height="20"/>
                                                 </activityIndicatorView>
                                             </subviews>
                                             <constraints>
@@ -170,7 +170,7 @@
                                             </constraints>
                                         </view>
                                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Hae-2f-zgd" customClass="RangeSegmentedControl" customModule="Bank" customModuleProvider="target">
-                                            <rect key="frame" x="14" y="147.5" width="347" height="29"/>
+                                            <rect key="frame" x="14" y="143.5" width="347" height="29"/>
                                             <segments>
                                                 <segment title="Value 1"/>
                                                 <segment title="Value 2"/>
@@ -185,7 +185,7 @@
                                         <constraint firstAttribute="trailing" secondItem="NyN-jc-QkS" secondAttribute="trailing" id="8qu-Jd-be2"/>
                                         <constraint firstItem="Hae-2f-zgd" firstAttribute="leading" secondItem="drY-yl-DdM" secondAttribute="leading" constant="14" id="AwD-Mw-DBK"/>
                                         <constraint firstItem="Hae-2f-zgd" firstAttribute="top" secondItem="NyN-jc-QkS" secondAttribute="bottom" constant="10" id="C9n-WW-FPe"/>
-                                        <constraint firstAttribute="bottom" secondItem="Hae-2f-zgd" secondAttribute="bottom" constant="6" id="HbN-UD-2hL"/>
+                                        <constraint firstAttribute="bottom" secondItem="Hae-2f-zgd" secondAttribute="bottom" constant="10" id="HbN-UD-2hL"/>
                                         <constraint firstItem="NyN-jc-QkS" firstAttribute="leading" secondItem="drY-yl-DdM" secondAttribute="leading" id="PBP-fy-U27"/>
                                         <constraint firstItem="NyN-jc-QkS" firstAttribute="top" secondItem="drY-yl-DdM" secondAttribute="top" id="T3M-1k-sNS"/>
                                     </constraints>
@@ -225,7 +225,7 @@
                                             </subviews>
                                         </stackView>
                                         <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" defersCurrentPageDisplay="YES" numberOfPages="1" translatesAutoresizingMaskIntoConstraints="NO" id="7N1-VT-en8">
-                                            <rect key="frame" x="-647999832.5" y="-55" width="1296000000" height="16"/>
+                                            <rect key="frame" x="-4499999832.5" y="-55" width="9000000000" height="16"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="16" id="pkX-69-Bca"/>
                                             </constraints>
