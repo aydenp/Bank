@@ -52,7 +52,12 @@ class StatusBarOverlayView: UIView {
     var isHairlineVisible = false {
         didSet {
             if isHairlineVisible == oldValue { return }
-            UIView.animate(withDuration: 0.1) { self.hairlineView.alpha = self.isHairlineVisible ? 1 : 0 }
+            func doAnimate() {
+                UIView.animate(withDuration: 0.15) { self.hairlineView.alpha = self.isHairlineVisible ? 1 : 0 }
+            }
+            if !Thread.isMainThread {
+                DispatchQueue.main.async { doAnimate() }
+            } else { doAnimate() }
         }
     }
 }
