@@ -8,14 +8,17 @@
 
 import UIKit
 
-class AccountViewController: UITableViewController {
-    var account: Account!
+class AccountViewController: UITableViewController, AccountHeaderViewDelegate {
+    weak var delegate: AccountViewControllerDelegate?
+    var account: Account!, index: (Int, Int)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Setup header view
         headerView.account = account
+        headerView.accountIndex = index
+        headerView.delegate = self
         // Populate with initial transaction data
         populateData()
         // Listen for transaction data changes
@@ -62,4 +65,14 @@ class AccountViewController: UITableViewController {
     static func get() -> AccountViewController {
         return UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "Account") as! AccountViewController
     }
+    
+    // MARK: - Account Header View Delegate
+    
+    func shouldMove(to index: Int) {
+        delegate?.shouldMove(to: index)
+    }
+}
+
+protocol AccountViewControllerDelegate: class {
+    func shouldMove(to index: Int)
 }

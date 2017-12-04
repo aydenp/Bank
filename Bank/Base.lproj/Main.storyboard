@@ -155,10 +155,10 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="drY-yl-DdM">
-                                    <rect key="frame" x="0.0" y="197.5" width="375" height="162.5"/>
+                                    <rect key="frame" x="0.0" y="192.5" width="375" height="167.5"/>
                                     <subviews>
                                         <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="abw-PF-ErW">
-                                            <rect key="frame" x="177" y="71.5" width="20" height="20"/>
+                                            <rect key="frame" x="177" y="74" width="20" height="20"/>
                                         </activityIndicatorView>
                                     </subviews>
                                     <constraints>
@@ -166,35 +166,52 @@
                                         <constraint firstItem="abw-PF-ErW" firstAttribute="centerY" secondItem="drY-yl-DdM" secondAttribute="centerY" id="njA-Hm-ujt"/>
                                     </constraints>
                                 </view>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="UDC-Ph-GPI">
-                                    <rect key="frame" x="20" y="60" width="335" height="117.5"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UDC-Ph-GPI">
+                                    <rect key="frame" x="20" y="55" width="335" height="117.5"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$---.--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUA-aH-omm" customClass="AmountLabel" customModule="Bank" customModuleProvider="target">
-                                            <rect key="frame" x="77" y="0.0" width="181" height="69.5"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="58"/>
-                                            <color key="textColor" red="0.32941176470588235" green="0.7803921568627451" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="90y-zk-0Sg">
-                                            <rect key="frame" x="99" y="71.5" width="137.5" height="46"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Vah-3D-xlp">
+                                            <rect key="frame" x="77" y="0.0" width="181" height="117.5"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="Plo-Ia-DOK">
-                                                    <rect key="frame" x="0.0" y="0.0" width="137.5" height="24"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$---.--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUA-aH-omm" customClass="AmountLabel" customModule="Bank" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="181" height="69.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="58"/>
                                                     <color key="textColor" red="0.32941176470588235" green="0.7803921568627451" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INSTITUTION NAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="5Gl-gL-Tu5">
-                                                    <rect key="frame" x="0.0" y="29" width="137.5" height="17"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                                    <color key="textColor" red="0.7803921568627451" green="0.7803921568627451" blue="0.80392156862745101" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="90y-zk-0Sg">
+                                                    <rect key="frame" x="22" y="71.5" width="137.5" height="46"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="Plo-Ia-DOK">
+                                                            <rect key="frame" x="0.0" y="0.0" width="137.5" height="24"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                            <color key="textColor" red="0.32941176470588235" green="0.7803921568627451" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INSTITUTION NAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="5Gl-gL-Tu5">
+                                                            <rect key="frame" x="0.0" y="29" width="137.5" height="17"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                            <color key="textColor" red="0.7803921568627451" green="0.7803921568627451" blue="0.80392156862745101" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="c7F-Ha-7Pa"/>
+                                                    </constraints>
+                                                </stackView>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="c7F-Ha-7Pa"/>
-                                            </constraints>
                                         </stackView>
+                                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" defersCurrentPageDisplay="YES" numberOfPages="1" translatesAutoresizingMaskIntoConstraints="NO" id="7N1-VT-en8">
+                                            <rect key="frame" x="-4499999832.5" y="-55" width="9000000000" height="16"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="16" id="pkX-69-Bca"/>
+                                            </constraints>
+                                            <color key="pageIndicatorTintColor" white="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="currentPageIndicatorTintColor" red="0.3294117647" green="0.78039215689999997" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="pageControlChanged:" destination="gzl-Ul-oCI" eventType="valueChanged" id="7Zy-cs-Qpm"/>
+                                                <action selector="pageControlChanged:" destination="BCK-rc-BfJ" eventType="valueChanged" id="oX9-YP-AS2"/>
+                                            </connections>
+                                        </pageControl>
                                     </subviews>
                                 </stackView>
                             </subviews>
@@ -202,7 +219,7 @@
                                 <constraint firstItem="drY-yl-DdM" firstAttribute="top" secondItem="UDC-Ph-GPI" secondAttribute="bottom" constant="20" id="3XU-jw-2Oq"/>
                                 <constraint firstAttribute="trailing" secondItem="drY-yl-DdM" secondAttribute="trailing" id="52X-Md-t7h"/>
                                 <constraint firstItem="drY-yl-DdM" firstAttribute="leading" secondItem="BCK-rc-BfJ" secondAttribute="leading" id="CJG-a7-pxy"/>
-                                <constraint firstItem="UDC-Ph-GPI" firstAttribute="top" secondItem="BCK-rc-BfJ" secondAttribute="top" constant="60" id="EBD-qt-7tD"/>
+                                <constraint firstItem="UDC-Ph-GPI" firstAttribute="top" secondItem="BCK-rc-BfJ" secondAttribute="top" constant="55" id="EBD-qt-7tD"/>
                                 <constraint firstItem="UDC-Ph-GPI" firstAttribute="leading" secondItem="BCK-rc-BfJ" secondAttribute="leading" constant="20" id="YKF-mA-Wc8"/>
                                 <constraint firstAttribute="trailing" secondItem="UDC-Ph-GPI" secondAttribute="trailing" constant="20" id="lgY-c9-u5T"/>
                                 <constraint firstAttribute="bottom" secondItem="drY-yl-DdM" secondAttribute="bottom" id="qJI-Na-eJS"/>
@@ -213,6 +230,7 @@
                                 <outlet property="chartLoadingView" destination="abw-PF-ErW" id="mFm-e9-giY"/>
                                 <outlet property="institutionLabel" destination="5Gl-gL-Tu5" id="TKl-d7-QwK"/>
                                 <outlet property="nameLabel" destination="Plo-Ia-DOK" id="W3J-qN-XBK"/>
+                                <outlet property="pageControl" destination="7N1-VT-en8" id="5RI-lX-7y0"/>
                             </connections>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="5ty-Ac-eji">
@@ -272,6 +290,7 @@
                     </tableView>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kfr-ED-fmU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="gzl-Ul-oCI" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1037.5999999999999" y="175.86206896551727"/>
         </scene>

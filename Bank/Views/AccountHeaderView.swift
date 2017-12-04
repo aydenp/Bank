@@ -10,11 +10,13 @@ import UIKit
 import SwiftChart
 
 class AccountHeaderView: UIView {
+    weak var delegate: AccountHeaderViewDelegate?
     @IBOutlet weak var amountLabel: AmountLabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var institutionLabel: UILabel!
     @IBOutlet weak var chartContainerView: UIView!
     @IBOutlet weak var chartLoadingView: UIActivityIndicatorView!
+    @IBOutlet weak var pageControl: UIPageControl!
     var hasAwaken = false
     var chart: Chart!
     
@@ -45,10 +47,18 @@ class AccountHeaderView: UIView {
         }
     }
     
+    var accountIndex: (Int, Int)? {
+        didSet {
+            if hasAwaken { setupData() }
+        }
+    }
+    
     @objc func setupData() {
         amountLabel.amount = account?.displayBalance ?? 0
         nameLabel.text = account?.name ?? "Account Name"
         institutionLabel.text = account?.institutionDescription ?? "Institution Name"
+        pageControl.numberOfPages = accountIndex?.1 ?? 1
+        pageControl.currentPage = accountIndex?.0 ?? 0
         setupChart()
     }
     
@@ -66,4 +76,16 @@ class AccountHeaderView: UIView {
             }
         }
     }
+    
+    // MARK: - Event Handlers
+
+    @IBAction func pageControlChanged(_ sender: Any) {
+        delegate?.shouldMove(to: pageControl.currentPage)
+        pageControl.currentPage = accountIndex?.0 ?? 0
+    }
+    
+}
+
+protocol AccountHeaderViewDelegate: class {
+    func shouldMove(to index: Int)
 }

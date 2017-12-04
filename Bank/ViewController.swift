@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIPageViewController, UIPageViewControllerDataSource, NoAccountsViewControllerDelegate {
+class ViewController: UIPageViewController, UIPageViewControllerDataSource, AccountViewControllerDelegate, NoAccountsViewControllerDelegate {
     var statusViewController: StatusViewController?
     var isExchanging = false
 
@@ -61,9 +61,17 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource, NoAc
         determineStatus()
     }
     
+    var currentIndex: Int? {
+        guard let account = (viewControllers?.first as? AccountViewController)?.account else { return nil }
+        return SessionDataStorage.shared.accounts?.index(of: account)
+    }
+    
     func getViewController(for index: Int) -> AccountViewController {
         let vc = AccountViewController.get()
         vc.account = SessionDataStorage.shared.accounts?[index]
+        let pageCount = SessionDataStorage.shared.accounts?.count ?? 0
+        vc.index = pageCount > 1 ? (index, pageCount) : nil
+        vc.delegate = self
         return vc
     }
     
@@ -80,26 +88,7 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource, NoAc
         }
     }
     
-    /// Whether or not swiping to go to the previous/next page is enabled.
-    var isSwipingEnabled = true {
-        didSet {
-            view.subviews.forEach { view in
-                if let scrollView = view as? UIScrollView { scrollView.isScrollEnabled = isSwipingEnabled }
-            }
-        }
-    }
-    
     // MARK: - Page View Controller Data Source
-    
-    func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        let count = SessionDataStorage.shared.accounts?.count ?? 0
-        return count > 1 ? count : 0
-    }
-    
-    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-        guard let account = ((pageViewController.viewControllers?.first) as? AccountViewController)?.account else { return 0 }
-        return SessionDataStorage.shared.accounts?.index(of: account) ?? 0
-    }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         guard let account = (viewController as? AccountViewController)?.account, let index = SessionDataStorage.shared.accounts?.index(of: account) else { return nil }
@@ -130,5 +119,12 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource, NoAc
             vc.delegate = self
             statusViewController = vc
         }
+    }
+    
+    // MARK: - Account View Controller Delegate
+    
+    func shouldMove(to index: Int) {
+        guard let currentIndex = self.currentIndex, currentIndex != index else { return }
+        setViewControllers([getViewController(for: index)], direction: index > currentIndex ? .forward : .reverse, animated: true, completion: nil)
     }
 }
