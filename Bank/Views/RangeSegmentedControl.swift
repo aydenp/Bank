@@ -22,14 +22,13 @@ class RangeSegmentedControl: UISegmentedControl {
     }
     
     private func setup() {
-        heightAnchor.constraint(equalToConstant: 34).isActive = true
         selectionView = UIView()
         selectionView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(selectionView)
         selectionView.heightAnchor.constraint(equalToConstant: 2).isActive = true
         selectionViewLeftAnchor = selectionView.leftAnchor.constraint(equalTo: leftAnchor)
         selectionViewLeftAnchor.isActive = true
-        selectionView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        selectionView.topAnchor.constraint(equalTo: bottomAnchor, constant: 3).isActive = true
         selectionViewWidthAnchor = selectionView.widthAnchor.constraint(equalToConstant: 0)
         selectionViewWidthAnchor.isActive = true
         setColours()

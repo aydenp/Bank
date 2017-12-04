@@ -54,15 +54,12 @@ class AccountHeaderView: UIView {
         // Setup chart
         chart = Chart(frame: chartContainerView.bounds)
         chart.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        chart.clipsToBounds = true
         chart.gridColor = .clear
         chart.axesColor = .clear
         chart.highlightLineColor = .lightGray
         chart.lineWidth = 3
         chart.labelFont = .systemFont(ofSize: 0)
         chart.labelColor = .clear
-        chart.topInset = 0
-        chart.bottomInset = 0
         chartContainerView.addSubview(chart)
         chartSegmentedControl.removeAllSegments()
         ChartViewRange.allOptions.enumerated().forEach {
