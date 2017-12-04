@@ -228,6 +228,7 @@
                                 <outlet property="amountLabel" destination="KUA-aH-omm" id="Q2X-oC-uXQ"/>
                                 <outlet property="chartContainerView" destination="drY-yl-DdM" id="uZO-aA-w7i"/>
                                 <outlet property="chartLoadingView" destination="abw-PF-ErW" id="mFm-e9-giY"/>
+                                <outlet property="infoStackView" destination="UDC-Ph-GPI" id="Cqz-6j-UcJ"/>
                                 <outlet property="institutionLabel" destination="5Gl-gL-Tu5" id="TKl-d7-QwK"/>
                                 <outlet property="nameLabel" destination="Plo-Ia-DOK" id="W3J-qN-XBK"/>
                                 <outlet property="pageControl" destination="7N1-VT-en8" id="5RI-lX-7y0"/>

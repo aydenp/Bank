@@ -8,14 +8,16 @@
 
 import UIKit
 
-class ViewController: UIPageViewController, UIPageViewControllerDataSource, AccountViewControllerDelegate, NoAccountsViewControllerDelegate {
+class ViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, AccountViewControllerDelegate, NoAccountsViewControllerDelegate {
     var statusViewController: StatusViewController?
+    var statusBarOverlayView: StatusBarOverlayView!
     var isExchanging = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         dataSource = self
+        delegate = self
         
         let appearance = UIPageControl.appearance(whenContainedInInstancesOf: [UIPageViewController.self])
         appearance.pageIndicatorTintColor = UIColor(white: 0.8, alpha: 1)
@@ -23,6 +25,15 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource, Acco
         
         // Add gradient view as background
         view.insertSubview(BackgroundGradientView(frame: view.bounds), at: 0)
+        
+        // Create status bar overlay view
+        statusBarOverlayView = StatusBarOverlayView()
+        view.addSubview(statusBarOverlayView)
+        statusBarOverlayView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        statusBarOverlayView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        statusBarOverlayView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        statusBarOverlayView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        statusBarOverlayView.viewHeightAnchor = view.heightAnchor
         
         // Listen for and reload on fetched bank account changes
         NotificationCenter.default.addObserver(self, selector: #selector(reloadViewControllers), name: SessionDataStorage.accountsChangedNotification, object: nil)
@@ -62,8 +73,12 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource, Acco
     }
     
     var currentIndex: Int? {
-        guard let account = (viewControllers?.first as? AccountViewController)?.account else { return nil }
+        guard let account = currentViewController?.account else { return nil }
         return SessionDataStorage.shared.accounts?.index(of: account)
+    }
+    
+    var currentViewController: AccountViewController? {
+        return viewControllers?.first as? AccountViewController
     }
     
     func getViewController(for index: Int) -> AccountViewController {
@@ -104,6 +119,12 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource, Acco
         return getViewController(for: newIndex)
     }
     
+    // MARK: - Page View Controller Delegate
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        statusBarOverlayView.isHairlineVisible = currentViewController?.shouldShowStatusBarHairline ?? false
+    }
+    
     // MARK: - No Accounts View Controller Delegate
     
     func didTapUnlink() {
@@ -123,8 +144,12 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource, Acco
     
     // MARK: - Account View Controller Delegate
     
-    func shouldMove(to index: Int) {
+    func accountViewController(_ viewController: AccountViewController, shouldMoveTo index: Int) {
         guard let currentIndex = self.currentIndex, currentIndex != index else { return }
         setViewControllers([getViewController(for: index)], direction: index > currentIndex ? .forward : .reverse, animated: true, completion: nil)
+    }
+
+    func accountViewController(_ viewController: AccountViewController, shouldShowStatusBarHairlineChangedTo shouldShow: Bool) {
+        statusBarOverlayView.isHairlineVisible = shouldShow
     }
 }

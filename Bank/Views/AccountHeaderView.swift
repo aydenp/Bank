@@ -17,6 +17,7 @@ class AccountHeaderView: UIView {
     @IBOutlet weak var chartContainerView: UIView!
     @IBOutlet weak var chartLoadingView: UIActivityIndicatorView!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var infoStackView: UIStackView!
     var hasAwaken = false
     var chart: Chart!
     

@@ -29,6 +29,13 @@ class AccountViewController: UITableViewController, AccountHeaderViewDelegate {
         return tableView.tableHeaderView as! AccountHeaderView
     }
     
+    var shouldShowStatusBarHairline = false {
+        didSet {
+            if oldValue == shouldShowStatusBarHairline { return }
+            delegate?.accountViewController(self, shouldShowStatusBarHairlineChangedTo: shouldShowStatusBarHairline)
+        }
+    }
+    
     // MARK: - Data Loading
     
     var transactions = [Transaction]() {
@@ -46,6 +53,7 @@ class AccountViewController: UITableViewController, AccountHeaderViewDelegate {
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         scrollView.scrollIndicatorInsets.top = max(headerView.frame.maxY - scrollView.contentOffset.y - scrollView.adjustedContentInset.top, 0)
+        shouldShowStatusBarHairline = scrollView.contentOffset.y > headerView.infoStackView.convert(headerView.infoStackView.bounds, to: scrollView).minY - scrollView.adjustedContentInset.top
     }
     
     // MARK: - Table View Data Source
@@ -69,10 +77,11 @@ class AccountViewController: UITableViewController, AccountHeaderViewDelegate {
     // MARK: - Account Header View Delegate
     
     func shouldMove(to index: Int) {
-        delegate?.shouldMove(to: index)
+        delegate?.accountViewController(self, shouldMoveTo: index)
     }
 }
 
 protocol AccountViewControllerDelegate: class {
-    func shouldMove(to index: Int)
+    func accountViewController(_ viewController: AccountViewController, shouldMoveTo index: Int)
+    func accountViewController(_ viewController: AccountViewController, shouldShowStatusBarHairlineChangedTo shouldShow: Bool)
 }
