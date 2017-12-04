@@ -100,12 +100,17 @@ class AccountHeaderView: UIView {
         setupChart()
     }
     
+    var chartChangeIndex = 0
     private func setupChart() {
+        chartChangeIndex += 1
+        let requiredIndex = chartChangeIndex
         chart.removeAllSeries()
         chartLoadingView.stopAnimating()
         guard let account = account else { return }
         chartLoadingView.startAnimating()
         account.getBalanceHistoricalData(from: selectedRange.startDate) { (data) in
+            // Make sure this is for the latest fetch, by comparing the change index when we started to the current one.
+            if self.chartChangeIndex != requiredIndex { return }
             DispatchQueue.main.async {
                 let series = ChartSeries(data: data.map { (x: Float($0.0.timeIntervalSinceReferenceDate), y: Float($0.1)) })
                 series.color = Colours.main
