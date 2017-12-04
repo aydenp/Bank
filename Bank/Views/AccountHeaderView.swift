@@ -60,6 +60,8 @@ class AccountHeaderView: UIView {
         chart.lineWidth = 3
         chart.labelFont = .systemFont(ofSize: 0)
         chart.labelColor = .clear
+        chart.topInset = 0
+        chart.bottomInset = 0
         chartContainerView.addSubview(chart)
         chartSegmentedControl.removeAllSegments()
         ChartViewRange.allOptions.enumerated().forEach {
