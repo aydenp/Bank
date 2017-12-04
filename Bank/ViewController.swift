@@ -55,6 +55,7 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource, NoAc
         setViewControllers((SessionDataStorage.shared.accounts?.count ?? 0) > 0 ? [getViewController(for: 0)] : [getNoAccountsViewController()], direction: .forward, animated: false, completion: nil)
         dataSource = nil
         dataSource = self
+        isSwipingEnabled = SessionDataStorage.shared.accounts?.count ?? 0 > 1
         determineStatus()
     }
     
@@ -77,11 +78,20 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource, NoAc
         }
     }
     
+    /// Whether or not swiping to go to the previous/next page is enabled.
+    var isSwipingEnabled = true {
+        didSet {
+            view.subviews.forEach { view in
+                if let scrollView = view as? UIScrollView { scrollView.isScrollEnabled = isSwipingEnabled }
+            }
+        }
+    }
+    
     // MARK: - Page View Controller Data Source
     
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
         let count = SessionDataStorage.shared.accounts?.count ?? 0
-        return count > 0 ? count : 0
+        return count > 1 ? count : 0
     }
     
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {
