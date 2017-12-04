@@ -36,7 +36,7 @@ class AccountViewController: UITableViewController {
     
     @objc func populateData() {
         print("Populating transaction data for account \(account.id)")
-        transactions = SessionDataStorage.shared.transactions(for: account)
+        transactions = account.transactions
     }
     
     // MARK: - Scroll View Delegate

@@ -44,7 +44,6 @@ class AmountLabel: UILabel {
     }
     
     func format(amount: Double) -> NSAttributedString {
-        // TODO: Refactor this terrible mess
         guard let formatted = AmountLabel.numberFormatter.string(from: NSNumber(value: abs(amount))) else { return NSAttributedString() }
         let normalFont = font.withSize(attributedText?.largestFontSize ?? font.pointSize)
         // Get the normal attributes used for fonts, and make its font smaller for use by sub info

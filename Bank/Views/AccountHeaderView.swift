@@ -7,20 +7,40 @@
 //
 
 import UIKit
+import SwiftChart
 
 class AccountHeaderView: UIView {
     @IBOutlet weak var amountLabel: AmountLabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var institutionLabel: UILabel!
+    @IBOutlet weak var chartContainerView: UIView!
     var hasAwaken = false
+    var chart: Chart!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        // Setup chart
+        chart = Chart(frame: chartContainerView.bounds)
+        chart.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        chart.gridColor = .clear
+        chart.axesColor = .clear
+        chart.highlightLineColor = .lightGray
+        chart.lineWidth = 3
+        chart.labelFont = .systemFont(ofSize: 0)
+        chart.labelColor = .clear
+        chart.topInset = 0
+        chart.bottomInset = 0
+        chartContainerView.addSubview(chart)
         // Initialization code
         setupData()
         hasAwaken = true
         // Listen for changes to periodic institution data store
         NotificationCenter.default.addObserver(self, selector: #selector(setupData), name: PeriodicFetchDataStorage.shared.institutions.dataChangedNotification, object: nil)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setupChart()
     }
     
     var account: Account? {
@@ -30,8 +50,18 @@ class AccountHeaderView: UIView {
     }
     
     @objc func setupData() {
-        amountLabel.amount = account?.balances.available ?? account?.balances.current ?? 0
+        amountLabel.amount = account?.displayBalance ?? 0
         nameLabel.text = account?.name ?? "Account Name"
-        institutionLabel.text = account?.institutionDescription ?? "Institution Name" // this is really bad but how it'll be for now
+        institutionLabel.text = account?.institutionDescription ?? "Institution Name"
+        setupChart()
+    }
+    
+    private func setupChart() {
+        chart.removeAllSeries()
+        if let chartData = account?.balanceHistoricalData(from: Date().addingTimeInterval(-60 * 60 * 24 * 30)) {
+            let series = ChartSeries(chartData.map { Float($0) })
+            series.color = .gradientColor(from: Colours.lighterMain, to: Colours.main, height: chartContainerView.bounds.height)
+            chart.add(series)
+        }
     }
 }

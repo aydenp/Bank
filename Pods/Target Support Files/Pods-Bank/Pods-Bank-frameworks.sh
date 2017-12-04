@@ -91,10 +91,12 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${PODS_ROOT}/Plaid/ios/LinkKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ReachabilitySwift/ReachabilitySwift.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftChart/SwiftChart.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${PODS_ROOT}/Plaid/ios/LinkKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ReachabilitySwift/ReachabilitySwift.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwiftChart/SwiftChart.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

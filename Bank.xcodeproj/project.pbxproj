@@ -8,10 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		522AF4AFBC5AE29C6CC94469 /* Pods_Bank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8309205B2A03DC256D5ED50F /* Pods_Bank.framework */; };
+		C31107CF1FD507B600ABF56B /* Account+Transactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31107CE1FD507B600ABF56B /* Account+Transactions.swift */; };
 		C316128E1FD48B5D000EC5ED /* InstitutionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C316128D1FD48B5D000EC5ED /* InstitutionResponse.swift */; };
 		C31612901FD48B7E000EC5ED /* Institution.swift in Sources */ = {isa = PBXBuildFile; fileRef = C316128F1FD48B7E000EC5ED /* Institution.swift */; };
-		C31612921FD4A9F1000EC5ED /* CategoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31612911FD4A9F1000EC5ED /* CategoriesResponse.swift */; };
-		C31612941FD4AA36000EC5ED /* TransactionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31612931FD4AA36000EC5ED /* TransactionCategory.swift */; };
 		C31612961FD4EDB9000EC5ED /* NSAttributedString+LargestFontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31612951FD4EDB9000EC5ED /* NSAttributedString+LargestFontSize.swift */; };
 		C31612981FD4EDF0000EC5ED /* UIColor+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31612971FD4EDF0000EC5ED /* UIColor+Gradient.swift */; };
 		C316129A1FD4F1D2000EC5ED /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31612991FD4F1D2000EC5ED /* Colours.swift */; };
@@ -53,10 +52,9 @@
 		37DDCB4EA2B28A948C846623 /* Pods-Bank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bank.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bank/Pods-Bank.debug.xcconfig"; sourceTree = "<group>"; };
 		8309205B2A03DC256D5ED50F /* Pods_Bank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A313A1E6671600F88ED6B46E /* Pods-Bank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bank.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bank/Pods-Bank.release.xcconfig"; sourceTree = "<group>"; };
+		C31107CE1FD507B600ABF56B /* Account+Transactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account+Transactions.swift"; sourceTree = "<group>"; };
 		C316128D1FD48B5D000EC5ED /* InstitutionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstitutionResponse.swift; sourceTree = "<group>"; };
 		C316128F1FD48B7E000EC5ED /* Institution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Institution.swift; sourceTree = "<group>"; };
-		C31612911FD4A9F1000EC5ED /* CategoriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesResponse.swift; sourceTree = "<group>"; };
-		C31612931FD4AA36000EC5ED /* TransactionCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategory.swift; sourceTree = "<group>"; };
 		C31612951FD4EDB9000EC5ED /* NSAttributedString+LargestFontSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+LargestFontSize.swift"; sourceTree = "<group>"; };
 		C31612971FD4EDF0000EC5ED /* UIColor+Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Gradient.swift"; sourceTree = "<group>"; };
 		C31612991FD4F1D2000EC5ED /* Colours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colours.swift; sourceTree = "<group>"; };
@@ -181,10 +179,10 @@
 		C3CBCAA31FD313B300010AA8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C3BCF73B1FCFBD620010497E /* Transaction.swift */,
 				C3CBCAA41FD313BC00010AA8 /* Account.swift */,
+				C31107CE1FD507B600ABF56B /* Account+Transactions.swift */,
+				C3BCF73B1FCFBD620010497E /* Transaction.swift */,
 				C316128F1FD48B7E000EC5ED /* Institution.swift */,
-				C31612931FD4AA36000EC5ED /* TransactionCategory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -219,7 +217,6 @@
 				C3CBCA961FD3079E00010AA8 /* ErrorResponse.swift */,
 				C3CBCAAC1FD36A7300010AA8 /* TransactionsResponse.swift */,
 				C316128D1FD48B5D000EC5ED /* InstitutionResponse.swift */,
-				C31612911FD4A9F1000EC5ED /* CategoriesResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -374,12 +371,10 @@
 				C316129A1FD4F1D2000EC5ED /* Colours.swift in Sources */,
 				C31612981FD4EDF0000EC5ED /* UIColor+Gradient.swift in Sources */,
 				C3CBCAAF1FD3731900010AA8 /* NoAccountsViewController.swift in Sources */,
-				C31612941FD4AA36000EC5ED /* TransactionCategory.swift in Sources */,
 				C31612961FD4EDB9000EC5ED /* NSAttributedString+LargestFontSize.swift in Sources */,
 				C3F578091FD2EAB20017EE17 /* APButton.swift in Sources */,
 				C3BCF73A1FCFB8FA0010497E /* PlaidManager.swift in Sources */,
 				C3F5780B1FD2EC170017EE17 /* StatusViewController.swift in Sources */,
-				C31612921FD4A9F1000EC5ED /* CategoriesResponse.swift in Sources */,
 				C3CBCA971FD3079E00010AA8 /* ErrorResponse.swift in Sources */,
 				C31612901FD48B7E000EC5ED /* Institution.swift in Sources */,
 				C3CBCAA71FD3186700010AA8 /* ViewController+Status.swift in Sources */,
@@ -392,6 +387,7 @@
 				C3CBCAB41FD45CB500010AA8 /* TransactionCell.swift in Sources */,
 				C3CBCABB1FD469BA00010AA8 /* BackgroundGradientView.swift in Sources */,
 				C3CBCAA91FD342FA00010AA8 /* AccountViewController.swift in Sources */,
+				C31107CF1FD507B600ABF56B /* Account+Transactions.swift in Sources */,
 				C3CBCAA51FD313BC00010AA8 /* Account.swift in Sources */,
 				C3CBCAAD1FD36A7300010AA8 /* TransactionsResponse.swift in Sources */,
 				C3CBCABF1FD4873D00010AA8 /* PeriodicFetchDataStorage.swift in Sources */,

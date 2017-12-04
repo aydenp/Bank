@@ -1,15 +1,18 @@
 PODS:
   - Plaid (1.0.10)
   - ReachabilitySwift (3)
+  - SwiftChart (0.5.0)
 
 DEPENDENCIES:
   - Plaid
   - ReachabilitySwift
+  - SwiftChart
 
 SPEC CHECKSUMS:
   Plaid: 71dd4195243523fb105bd4a8d736edc6d05964c4
   ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
+  SwiftChart: d1d22d2b1c4582f4d561edf97a210059c00ee256
 
-PODFILE CHECKSUM: 250999b18f4a3b18cab30b9348093955525ee003
+PODFILE CHECKSUM: aa36866ecc1cbbbf85aab8b27b1a35516f21f24c
 
 COCOAPODS: 1.2.1

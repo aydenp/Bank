@@ -200,6 +200,7 @@
                             </constraints>
                             <connections>
                                 <outlet property="amountLabel" destination="KUA-aH-omm" id="Q2X-oC-uXQ"/>
+                                <outlet property="chartContainerView" destination="drY-yl-DdM" id="uZO-aA-w7i"/>
                                 <outlet property="institutionLabel" destination="5Gl-gL-Tu5" id="TKl-d7-QwK"/>
                                 <outlet property="nameLabel" destination="Plo-Ia-DOK" id="W3J-qN-XBK"/>
                             </connections>

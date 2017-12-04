@@ -24,6 +24,11 @@ struct Account: Codable, Equatable {
     /// The type of the account.
     let type: AccountType
     
+    /// The balance to display to the user.
+    var displayBalance: Double {
+        return balances.available ?? balances.current ?? 0
+    }
+    
     /// The name of the financial institution for this account.
     var institutionName: String? {
         guard let id = institutionID else { return nil }
