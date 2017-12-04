@@ -1,0 +1,596 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		522AF4AFBC5AE29C6CC94469 /* Pods_Bank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8309205B2A03DC256D5ED50F /* Pods_Bank.framework */; };
+		C316128E1FD48B5D000EC5ED /* InstitutionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C316128D1FD48B5D000EC5ED /* InstitutionResponse.swift */; };
+		C31612901FD48B7E000EC5ED /* Institution.swift in Sources */ = {isa = PBXBuildFile; fileRef = C316128F1FD48B7E000EC5ED /* Institution.swift */; };
+		C31612921FD4A9F1000EC5ED /* CategoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31612911FD4A9F1000EC5ED /* CategoriesResponse.swift */; };
+		C31612941FD4AA36000EC5ED /* TransactionCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31612931FD4AA36000EC5ED /* TransactionCategory.swift */; };
+		C31612961FD4EDB9000EC5ED /* NSAttributedString+LargestFontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31612951FD4EDB9000EC5ED /* NSAttributedString+LargestFontSize.swift */; };
+		C31612981FD4EDF0000EC5ED /* UIColor+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31612971FD4EDF0000EC5ED /* UIColor+Gradient.swift */; };
+		C316129A1FD4F1D2000EC5ED /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31612991FD4F1D2000EC5ED /* Colours.swift */; };
+		C3BCF7281FCF5C130010497E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BCF7271FCF5C130010497E /* AppDelegate.swift */; };
+		C3BCF72A1FCF5C130010497E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BCF7291FCF5C130010497E /* ViewController.swift */; };
+		C3BCF72D1FCF5C130010497E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3BCF72B1FCF5C130010497E /* Main.storyboard */; };
+		C3BCF72F1FCF5C130010497E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3BCF72E1FCF5C130010497E /* Assets.xcassets */; };
+		C3BCF7321FCF5C130010497E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3BCF7301FCF5C130010497E /* LaunchScreen.storyboard */; };
+		C3BCF73A1FCFB8FA0010497E /* PlaidManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BCF7391FCFB8FA0010497E /* PlaidManager.swift */; };
+		C3BCF73C1FCFBD620010497E /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BCF73B1FCFBD620010497E /* Transaction.swift */; };
+		C3CBCA931FD303B300010AA8 /* Plaid.plist in Resources */ = {isa = PBXBuildFile; fileRef = C3CBCA921FD303B300010AA8 /* Plaid.plist */; };
+		C3CBCA951FD3075D00010AA8 /* AccessTokenExchangeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCA941FD3075D00010AA8 /* AccessTokenExchangeResponse.swift */; };
+		C3CBCA971FD3079E00010AA8 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCA961FD3079E00010AA8 /* ErrorResponse.swift */; };
+		C3CBCA9A1FD30B1500010AA8 /* UIViewController+ShorthandAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCA991FD30B1500010AA8 /* UIViewController+ShorthandAlerts.swift */; };
+		C3CBCA9C1FD312B800010AA8 /* PlaidAPI+ExchangeTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCA9B1FD312B800010AA8 /* PlaidAPI+ExchangeTokens.swift */; };
+		C3CBCAA51FD313BC00010AA8 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCAA41FD313BC00010AA8 /* Account.swift */; };
+		C3CBCAA71FD3186700010AA8 /* ViewController+Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCAA61FD3186700010AA8 /* ViewController+Status.swift */; };
+		C3CBCAA91FD342FA00010AA8 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCAA81FD342FA00010AA8 /* AccountViewController.swift */; };
+		C3CBCAAB1FD3663F00010AA8 /* PlaidAPI+Transactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCAAA1FD3663F00010AA8 /* PlaidAPI+Transactions.swift */; };
+		C3CBCAAD1FD36A7300010AA8 /* TransactionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCAAC1FD36A7300010AA8 /* TransactionsResponse.swift */; };
+		C3CBCAAF1FD3731900010AA8 /* NoAccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCAAE1FD3731900010AA8 /* NoAccountsViewController.swift */; };
+		C3CBCAB11FD4491800010AA8 /* SessionDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCAB01FD4491800010AA8 /* SessionDataStorage.swift */; };
+		C3CBCAB41FD45CB500010AA8 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCAB31FD45CB500010AA8 /* TransactionCell.swift */; };
+		C3CBCAB61FD461A400010AA8 /* TransactionAmountLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCAB51FD461A400010AA8 /* TransactionAmountLabel.swift */; };
+		C3CBCAB91FD461E700010AA8 /* AmountLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCAB81FD461E700010AA8 /* AmountLabel.swift */; };
+		C3CBCABB1FD469BA00010AA8 /* BackgroundGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCABA1FD469B900010AA8 /* BackgroundGradientView.swift */; };
+		C3CBCABD1FD4767A00010AA8 /* AccountHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCABC1FD4767A00010AA8 /* AccountHeaderView.swift */; };
+		C3CBCABF1FD4873D00010AA8 /* PeriodicFetchDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCABE1FD4873D00010AA8 /* PeriodicFetchDataStorage.swift */; };
+		C3CBCAC11FD4895000010AA8 /* PaginatingPlaidResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCAC01FD4895000010AA8 /* PaginatingPlaidResponse.swift */; };
+		C3F578001FD2DD0F0017EE17 /* PlaidAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F577FF1FD2DD0F0017EE17 /* PlaidAPI.swift */; };
+		C3F578021FD2DD8C0017EE17 /* PlaidResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F578011FD2DD8C0017EE17 /* PlaidResponse.swift */; };
+		C3F578041FD2DDE40017EE17 /* PlaidError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F578031FD2DDE40017EE17 /* PlaidError.swift */; };
+		C3F578071FD2EA480017EE17 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F578061FD2EA480017EE17 /* GradientView.swift */; };
+		C3F578091FD2EAB20017EE17 /* APButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F578081FD2EAB10017EE17 /* APButton.swift */; };
+		C3F5780B1FD2EC170017EE17 /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F5780A1FD2EC170017EE17 /* StatusViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		37DDCB4EA2B28A948C846623 /* Pods-Bank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bank.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bank/Pods-Bank.debug.xcconfig"; sourceTree = "<group>"; };
+		8309205B2A03DC256D5ED50F /* Pods_Bank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A313A1E6671600F88ED6B46E /* Pods-Bank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bank.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bank/Pods-Bank.release.xcconfig"; sourceTree = "<group>"; };
+		C316128D1FD48B5D000EC5ED /* InstitutionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstitutionResponse.swift; sourceTree = "<group>"; };
+		C316128F1FD48B7E000EC5ED /* Institution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Institution.swift; sourceTree = "<group>"; };
+		C31612911FD4A9F1000EC5ED /* CategoriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesResponse.swift; sourceTree = "<group>"; };
+		C31612931FD4AA36000EC5ED /* TransactionCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCategory.swift; sourceTree = "<group>"; };
+		C31612951FD4EDB9000EC5ED /* NSAttributedString+LargestFontSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+LargestFontSize.swift"; sourceTree = "<group>"; };
+		C31612971FD4EDF0000EC5ED /* UIColor+Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Gradient.swift"; sourceTree = "<group>"; };
+		C31612991FD4F1D2000EC5ED /* Colours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colours.swift; sourceTree = "<group>"; };
+		C3BCF7241FCF5C130010497E /* Bank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bank.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3BCF7271FCF5C130010497E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C3BCF7291FCF5C130010497E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C3BCF72C1FCF5C130010497E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C3BCF72E1FCF5C130010497E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C3BCF7311FCF5C130010497E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C3BCF7331FCF5C130010497E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C3BCF7391FCFB8FA0010497E /* PlaidManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaidManager.swift; sourceTree = "<group>"; };
+		C3BCF73B1FCFBD620010497E /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		C3CBCA921FD303B300010AA8 /* Plaid.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Plaid.plist; sourceTree = SOURCE_ROOT; };
+		C3CBCA941FD3075D00010AA8 /* AccessTokenExchangeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenExchangeResponse.swift; sourceTree = "<group>"; };
+		C3CBCA961FD3079E00010AA8 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		C3CBCA991FD30B1500010AA8 /* UIViewController+ShorthandAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ShorthandAlerts.swift"; sourceTree = "<group>"; };
+		C3CBCA9B1FD312B800010AA8 /* PlaidAPI+ExchangeTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlaidAPI+ExchangeTokens.swift"; sourceTree = "<group>"; };
+		C3CBCAA41FD313BC00010AA8 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		C3CBCAA61FD3186700010AA8 /* ViewController+Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Status.swift"; sourceTree = "<group>"; };
+		C3CBCAA81FD342FA00010AA8 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		C3CBCAAA1FD3663F00010AA8 /* PlaidAPI+Transactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlaidAPI+Transactions.swift"; sourceTree = "<group>"; };
+		C3CBCAAC1FD36A7300010AA8 /* TransactionsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsResponse.swift; sourceTree = "<group>"; };
+		C3CBCAAE1FD3731900010AA8 /* NoAccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoAccountsViewController.swift; sourceTree = "<group>"; };
+		C3CBCAB01FD4491800010AA8 /* SessionDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDataStorage.swift; sourceTree = "<group>"; };
+		C3CBCAB31FD45CB500010AA8 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
+		C3CBCAB51FD461A400010AA8 /* TransactionAmountLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionAmountLabel.swift; sourceTree = "<group>"; };
+		C3CBCAB81FD461E700010AA8 /* AmountLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountLabel.swift; sourceTree = "<group>"; };
+		C3CBCABA1FD469B900010AA8 /* BackgroundGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradientView.swift; sourceTree = "<group>"; };
+		C3CBCABC1FD4767A00010AA8 /* AccountHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHeaderView.swift; sourceTree = "<group>"; };
+		C3CBCABE1FD4873D00010AA8 /* PeriodicFetchDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicFetchDataStorage.swift; sourceTree = "<group>"; };
+		C3CBCAC01FD4895000010AA8 /* PaginatingPlaidResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginatingPlaidResponse.swift; sourceTree = "<group>"; };
+		C3F577FF1FD2DD0F0017EE17 /* PlaidAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaidAPI.swift; sourceTree = "<group>"; };
+		C3F578011FD2DD8C0017EE17 /* PlaidResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaidResponse.swift; sourceTree = "<group>"; };
+		C3F578031FD2DDE40017EE17 /* PlaidError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaidError.swift; sourceTree = "<group>"; };
+		C3F578061FD2EA480017EE17 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		C3F578081FD2EAB10017EE17 /* APButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APButton.swift; sourceTree = "<group>"; };
+		C3F5780A1FD2EC170017EE17 /* StatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C3BCF7211FCF5C130010497E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				522AF4AFBC5AE29C6CC94469 /* Pods_Bank.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C3924D334E87D78B67F2C6E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8309205B2A03DC256D5ED50F /* Pods_Bank.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C3BCF71B1FCF5C130010497E = {
+			isa = PBXGroup;
+			children = (
+				C3BCF7261FCF5C130010497E /* Bank */,
+				C3BCF7251FCF5C130010497E /* Products */,
+				CC4BC4E5F431089F563494E2 /* Pods */,
+				C3924D334E87D78B67F2C6E9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C3BCF7251FCF5C130010497E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C3BCF7241FCF5C130010497E /* Bank.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C3BCF7261FCF5C130010497E /* Bank */ = {
+			isa = PBXGroup;
+			children = (
+				C3BCF7271FCF5C130010497E /* AppDelegate.swift */,
+				C3BCF7291FCF5C130010497E /* ViewController.swift */,
+				C3CBCAA61FD3186700010AA8 /* ViewController+Status.swift */,
+				C3CBCAA81FD342FA00010AA8 /* AccountViewController.swift */,
+				C3CBCAAE1FD3731900010AA8 /* NoAccountsViewController.swift */,
+				C3F5780A1FD2EC170017EE17 /* StatusViewController.swift */,
+				C3BCF72B1FCF5C130010497E /* Main.storyboard */,
+				C3BCF72E1FCF5C130010497E /* Assets.xcassets */,
+				C3BCF7301FCF5C130010497E /* LaunchScreen.storyboard */,
+				C3BCF7331FCF5C130010497E /* Info.plist */,
+				C3F578051FD2EA390017EE17 /* Views */,
+				C3CBCA981FD30B0500010AA8 /* Extensions */,
+				C3CBCAA31FD313B300010AA8 /* Models */,
+				C3F577FD1FD2DCF10017EE17 /* API */,
+				C3CBCA921FD303B300010AA8 /* Plaid.plist */,
+				C3CBCAB01FD4491800010AA8 /* SessionDataStorage.swift */,
+				C3CBCABE1FD4873D00010AA8 /* PeriodicFetchDataStorage.swift */,
+				C31612991FD4F1D2000EC5ED /* Colours.swift */,
+			);
+			path = Bank;
+			sourceTree = "<group>";
+		};
+		C3CBCA981FD30B0500010AA8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C3CBCA991FD30B1500010AA8 /* UIViewController+ShorthandAlerts.swift */,
+				C31612951FD4EDB9000EC5ED /* NSAttributedString+LargestFontSize.swift */,
+				C31612971FD4EDF0000EC5ED /* UIColor+Gradient.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C3CBCA9E1FD312DB00010AA8 /* Methods */ = {
+			isa = PBXGroup;
+			children = (
+				C3CBCA9B1FD312B800010AA8 /* PlaidAPI+ExchangeTokens.swift */,
+				C3CBCAAA1FD3663F00010AA8 /* PlaidAPI+Transactions.swift */,
+			);
+			path = Methods;
+			sourceTree = "<group>";
+		};
+		C3CBCAA31FD313B300010AA8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C3BCF73B1FCFBD620010497E /* Transaction.swift */,
+				C3CBCAA41FD313BC00010AA8 /* Account.swift */,
+				C316128F1FD48B7E000EC5ED /* Institution.swift */,
+				C31612931FD4AA36000EC5ED /* TransactionCategory.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C3CBCAB71FD461B600010AA8 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				C3F578081FD2EAB10017EE17 /* APButton.swift */,
+				C3F578061FD2EA480017EE17 /* GradientView.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		C3F577FD1FD2DCF10017EE17 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				C3BCF7391FCFB8FA0010497E /* PlaidManager.swift */,
+				C3F577FF1FD2DD0F0017EE17 /* PlaidAPI.swift */,
+				C3CBCA9E1FD312DB00010AA8 /* Methods */,
+				C3F577FE1FD2DCF80017EE17 /* Responses */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		C3F577FE1FD2DCF80017EE17 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				C3F578011FD2DD8C0017EE17 /* PlaidResponse.swift */,
+				C3F578031FD2DDE40017EE17 /* PlaidError.swift */,
+				C3CBCAC01FD4895000010AA8 /* PaginatingPlaidResponse.swift */,
+				C3CBCA941FD3075D00010AA8 /* AccessTokenExchangeResponse.swift */,
+				C3CBCA961FD3079E00010AA8 /* ErrorResponse.swift */,
+				C3CBCAAC1FD36A7300010AA8 /* TransactionsResponse.swift */,
+				C316128D1FD48B5D000EC5ED /* InstitutionResponse.swift */,
+				C31612911FD4A9F1000EC5ED /* CategoriesResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		C3F578051FD2EA390017EE17 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C3CBCAB31FD45CB500010AA8 /* TransactionCell.swift */,
+				C3CBCAB51FD461A400010AA8 /* TransactionAmountLabel.swift */,
+				C3CBCAB81FD461E700010AA8 /* AmountLabel.swift */,
+				C3CBCABC1FD4767A00010AA8 /* AccountHeaderView.swift */,
+				C3CBCABA1FD469B900010AA8 /* BackgroundGradientView.swift */,
+				C3CBCAB71FD461B600010AA8 /* Utility */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CC4BC4E5F431089F563494E2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				37DDCB4EA2B28A948C846623 /* Pods-Bank.debug.xcconfig */,
+				A313A1E6671600F88ED6B46E /* Pods-Bank.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C3BCF7231FCF5C130010497E /* Bank */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3BCF7361FCF5C130010497E /* Build configuration list for PBXNativeTarget "Bank" */;
+			buildPhases = (
+				9B0FAB9D368ED13888877EBC /* [CP] Check Pods Manifest.lock */,
+				C3BCF7201FCF5C130010497E /* Sources */,
+				C3BCF7211FCF5C130010497E /* Frameworks */,
+				C3BCF7221FCF5C130010497E /* Resources */,
+				E07E22E1DB7385F460EFC706 /* [CP] Embed Pods Frameworks */,
+				3FB9C0A1524151807688935C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Bank;
+			productName = Bank;
+			productReference = C3BCF7241FCF5C130010497E /* Bank.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C3BCF71C1FCF5C130010497E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Ayden Panhuyzen";
+				TargetAttributes = {
+					C3BCF7231FCF5C130010497E = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = C3BCF71F1FCF5C130010497E /* Build configuration list for PBXProject "Bank" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C3BCF71B1FCF5C130010497E;
+			productRefGroup = C3BCF7251FCF5C130010497E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C3BCF7231FCF5C130010497E /* Bank */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C3BCF7221FCF5C130010497E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3BCF7321FCF5C130010497E /* LaunchScreen.storyboard in Resources */,
+				C3BCF72F1FCF5C130010497E /* Assets.xcassets in Resources */,
+				C3BCF72D1FCF5C130010497E /* Main.storyboard in Resources */,
+				C3CBCA931FD303B300010AA8 /* Plaid.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3FB9C0A1524151807688935C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bank/Pods-Bank-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B0FAB9D368ED13888877EBC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E07E22E1DB7385F460EFC706 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bank/Pods-Bank-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C3BCF7201FCF5C130010497E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3CBCA9C1FD312B800010AA8 /* PlaidAPI+ExchangeTokens.swift in Sources */,
+				C316129A1FD4F1D2000EC5ED /* Colours.swift in Sources */,
+				C31612981FD4EDF0000EC5ED /* UIColor+Gradient.swift in Sources */,
+				C3CBCAAF1FD3731900010AA8 /* NoAccountsViewController.swift in Sources */,
+				C31612941FD4AA36000EC5ED /* TransactionCategory.swift in Sources */,
+				C31612961FD4EDB9000EC5ED /* NSAttributedString+LargestFontSize.swift in Sources */,
+				C3F578091FD2EAB20017EE17 /* APButton.swift in Sources */,
+				C3BCF73A1FCFB8FA0010497E /* PlaidManager.swift in Sources */,
+				C3F5780B1FD2EC170017EE17 /* StatusViewController.swift in Sources */,
+				C31612921FD4A9F1000EC5ED /* CategoriesResponse.swift in Sources */,
+				C3CBCA971FD3079E00010AA8 /* ErrorResponse.swift in Sources */,
+				C31612901FD48B7E000EC5ED /* Institution.swift in Sources */,
+				C3CBCAA71FD3186700010AA8 /* ViewController+Status.swift in Sources */,
+				C3F578021FD2DD8C0017EE17 /* PlaidResponse.swift in Sources */,
+				C3BCF72A1FCF5C130010497E /* ViewController.swift in Sources */,
+				C3CBCA951FD3075D00010AA8 /* AccessTokenExchangeResponse.swift in Sources */,
+				C3CBCAAB1FD3663F00010AA8 /* PlaidAPI+Transactions.swift in Sources */,
+				C3CBCAC11FD4895000010AA8 /* PaginatingPlaidResponse.swift in Sources */,
+				C3BCF73C1FCFBD620010497E /* Transaction.swift in Sources */,
+				C3CBCAB41FD45CB500010AA8 /* TransactionCell.swift in Sources */,
+				C3CBCABB1FD469BA00010AA8 /* BackgroundGradientView.swift in Sources */,
+				C3CBCAA91FD342FA00010AA8 /* AccountViewController.swift in Sources */,
+				C3CBCAA51FD313BC00010AA8 /* Account.swift in Sources */,
+				C3CBCAAD1FD36A7300010AA8 /* TransactionsResponse.swift in Sources */,
+				C3CBCABF1FD4873D00010AA8 /* PeriodicFetchDataStorage.swift in Sources */,
+				C3CBCAB91FD461E700010AA8 /* AmountLabel.swift in Sources */,
+				C3F578001FD2DD0F0017EE17 /* PlaidAPI.swift in Sources */,
+				C316128E1FD48B5D000EC5ED /* InstitutionResponse.swift in Sources */,
+				C3CBCAB11FD4491800010AA8 /* SessionDataStorage.swift in Sources */,
+				C3BCF7281FCF5C130010497E /* AppDelegate.swift in Sources */,
+				C3CBCAB61FD461A400010AA8 /* TransactionAmountLabel.swift in Sources */,
+				C3F578071FD2EA480017EE17 /* GradientView.swift in Sources */,
+				C3CBCA9A1FD30B1500010AA8 /* UIViewController+ShorthandAlerts.swift in Sources */,
+				C3F578041FD2DDE40017EE17 /* PlaidError.swift in Sources */,
+				C3CBCABD1FD4767A00010AA8 /* AccountHeaderView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C3BCF72B1FCF5C130010497E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3BCF72C1FCF5C130010497E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C3BCF7301FCF5C130010497E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3BCF7311FCF5C130010497E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C3BCF7341FCF5C130010497E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C3BCF7351FCF5C130010497E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C3BCF7371FCF5C130010497E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37DDCB4EA2B28A948C846623 /* Pods-Bank.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6N2S3YHMFB;
+				INFOPLIST_FILE = Bank/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = madebyayden.ios.Bank;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C3BCF7381FCF5C130010497E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A313A1E6671600F88ED6B46E /* Pods-Bank.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6N2S3YHMFB;
+				INFOPLIST_FILE = Bank/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = madebyayden.ios.Bank;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C3BCF71F1FCF5C130010497E /* Build configuration list for PBXProject "Bank" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3BCF7341FCF5C130010497E /* Debug */,
+				C3BCF7351FCF5C130010497E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3BCF7361FCF5C130010497E /* Build configuration list for PBXNativeTarget "Bank" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3BCF7371FCF5C130010497E /* Debug */,
+				C3BCF7381FCF5C130010497E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C3BCF71C1FCF5C130010497E /* Project object */;
+}

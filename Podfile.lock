@@ -1,0 +1,15 @@
+PODS:
+  - Plaid (1.0.10)
+  - ReachabilitySwift (3)
+
+DEPENDENCIES:
+  - Plaid
+  - ReachabilitySwift
+
+SPEC CHECKSUMS:
+  Plaid: 71dd4195243523fb105bd4a8d736edc6d05964c4
+  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
+
+PODFILE CHECKSUM: 250999b18f4a3b18cab30b9348093955525ee003
+
+COCOAPODS: 1.2.1
