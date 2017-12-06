@@ -66,10 +66,17 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource, UIPa
         setViewControllers((SessionDataStorage.shared.accounts?.count ?? 0) > 0 ? [getViewController(for: 0)] : [getNoAccountsViewController()], direction: .forward, animated: false, completion: nil)
         dataSource = nil
         // Only re-enable data source if we have more than one item (as no data source means no horizontal scrolling)
-        if SessionDataStorage.shared.accounts?.count ?? 0 > 1 {
+        if SessionDataStorage.shared.accounts?.count ?? 0 > 1 && movementEnabled {
             dataSource = self
         }
         determineStatus()
+    }
+    
+    var movementEnabled = true {
+        didSet {
+            if oldValue == movementEnabled { return }
+            dataSource = movementEnabled && SessionDataStorage.shared.accounts?.count ?? 0 > 1 ? self : nil
+        }
     }
     
     var currentIndex: Int? {
@@ -151,5 +158,9 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource, UIPa
 
     func accountViewController(_ viewController: AccountViewController, shouldShowStatusBarHairlineChangedTo shouldShow: Bool) {
         statusBarOverlayView.isHairlineVisible = shouldShow
+    }
+    
+    func accountViewController(_ viewController: AccountViewController, setMovementEnabledTo enabled: Bool) {
+        movementEnabled = enabled
     }
 }

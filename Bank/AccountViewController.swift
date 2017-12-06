@@ -10,7 +10,7 @@ import UIKit
 
 class AccountViewController: UITableViewController, AccountHeaderViewDelegate {
     weak var delegate: AccountViewControllerDelegate?
-    var account: Account!, index: (Int, Int)?
+    var account: Account!, index: (Int, Int)?, tapGestureRecognizer: UITapGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +19,10 @@ class AccountViewController: UITableViewController, AccountHeaderViewDelegate {
         headerView.account = account
         headerView.accountIndex = index
         headerView.delegate = self
+        // Setup chart escape tap gesture recognizer
+        tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        tapGestureRecognizer.isEnabled = false
+        tableView.addGestureRecognizer(tapGestureRecognizer)
         // Populate with initial transaction data
         populateData()
         // Listen for transaction data changes
@@ -36,12 +40,42 @@ class AccountViewController: UITableViewController, AccountHeaderViewDelegate {
         }
     }
     
+    var movementEnabled = true {
+        didSet {
+            if oldValue == movementEnabled { return }
+            // Hide scroll indicators, because we lock scrolling in elsewhere and they still show when dragging
+            tableView.showsHorizontalScrollIndicator = movementEnabled
+            // Fade out cells
+            UIView.animate(withDuration: 0.25) {
+                self.tableView.visibleCells.forEach { cell in
+                    cell.alpha = self.movementEnabled ? 1 : 0.2
+                    cell.isUserInteractionEnabled = self.movementEnabled
+                }
+            }
+            // We need this to escape the chart, enable if movement disabled
+            tapGestureRecognizer.isEnabled = !movementEnabled
+            // Scroll to the top if disabled
+            if !movementEnabled {
+                tableView.setContentOffset(CGPoint(x: -tableView.contentInset.left, y: -tableView.adjustedContentInset.top), animated: true)
+            }
+        }
+    }
+    
+    // MARK: - Tap Handling
+    
+    @objc func tapped(with gestureRecognizer: UITapGestureRecognizer) {
+        guard !movementEnabled, gestureRecognizer.state == .recognized else { return }
+        let chartFrame = headerView.chart.convert(headerView.chart.bounds, to: gestureRecognizer.view!)
+        if !chartFrame.contains(gestureRecognizer.location(in: gestureRecognizer.view!)) {
+            // Tap isn't in chart, escape chart again
+            headerView.chart.finishTouchingChart()
+        }
+    }
+    
     // MARK: - Data Loading
     
     var transactions = [Transaction]() {
-        didSet {
-            tableView.reloadData()
-        }
+        didSet { tableView.reloadData() }
     }
     
     @objc func populateData() {
@@ -51,9 +85,15 @@ class AccountViewController: UITableViewController, AccountHeaderViewDelegate {
     
     // MARK: - Scroll View Delegate
     
+    var oldY: CGFloat?
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         scrollView.scrollIndicatorInsets.top = max(headerView.frame.maxY - scrollView.contentOffset.y - scrollView.adjustedContentInset.top, 0)
         shouldShowStatusBarHairline = scrollView.contentOffset.y > headerView.infoStackView.convert(headerView.infoStackView.bounds, to: scrollView).minY - scrollView.adjustedContentInset.top
+        if !movementEnabled && scrollView.isDragging, let oldY = oldY {
+            scrollView.setContentOffset(CGPoint(x: 0, y: oldY), animated: false)
+        } else {
+            oldY = scrollView.contentOffset.y
+        }
     }
     
     // MARK: - Table View Data Source
@@ -68,6 +108,13 @@ class AccountViewController: UITableViewController, AccountHeaderViewDelegate {
         return cell
     }
     
+    // MARK: - Table View Delegate
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.alpha = movementEnabled ? 1 : 0.2
+        cell.isUserInteractionEnabled = movementEnabled
+    }
+    
     // MARK: - Easy Initialization
     
     static func get() -> AccountViewController {
@@ -79,9 +126,15 @@ class AccountViewController: UITableViewController, AccountHeaderViewDelegate {
     func shouldMove(to index: Int) {
         delegate?.accountViewController(self, shouldMoveTo: index)
     }
+    
+    func setMovementEnabled(to enabled: Bool) {
+        delegate?.accountViewController(self, setMovementEnabledTo: enabled)
+        movementEnabled = enabled
+    }
 }
 
 protocol AccountViewControllerDelegate: class {
     func accountViewController(_ viewController: AccountViewController, shouldMoveTo index: Int)
     func accountViewController(_ viewController: AccountViewController, shouldShowStatusBarHairlineChangedTo shouldShow: Bool)
+    func accountViewController(_ viewController: AccountViewController, setMovementEnabledTo enabled: Bool)
 }

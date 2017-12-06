@@ -11,46 +11,23 @@ import SwiftChart
 
 class AccountHeaderView: UIView, ChartDelegate {
     weak var delegate: AccountHeaderViewDelegate?
+    var hasAwaken = false
+    var chart: Chart!, formatter: DateFormatter!
     @IBOutlet weak var amountLabel: AmountLabel!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var historicDateLabel: UILabel!
     @IBOutlet weak var institutionLabel: UILabel!
     @IBOutlet weak var chartContainerView: UIView!
     @IBOutlet weak var chartLoadingView: UIActivityIndicatorView!
     @IBOutlet weak var chartSegmentedControl: UISegmentedControl!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var infoStackView: UIStackView!
-    var hasAwaken = false
-    var chart: Chart!
-    
-    enum ChartViewRange: TimeInterval {
-        static let allOptions: [ChartViewRange] = [.week, .twoWeeks, .month, .threeMonths, .sixMonths, .year, .all]
-        static let defaultOption = ChartViewRange.month
-        case week = 7, twoWeeks = 14, month = 30, threeMonths = 90, sixMonths = 180, year = 365, all = 0
-        
-        var startDate: Date? {
-            guard days > 0 else { return nil }
-            return Date().addingTimeInterval(-60 * 60 * 24 * days)
-        }
-        
-        var days: TimeInterval {
-            return rawValue
-        }
-        
-        var displayText: String {
-            switch self {
-            case .week: return "1W"
-            case .twoWeeks: return "2W"
-            case .month: return "1M"
-            case .threeMonths: return "3M"
-            case .sixMonths: return "6M"
-            case .year: return "1Y"
-            case .all: return "All"
-            }
-        }
-    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        // Setup formatter
+        formatter = DateFormatter()
+        formatter.dateStyle = .long
         // Setup chart
         chart = Chart(frame: chartContainerView.bounds)
         chart.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -111,6 +88,7 @@ class AccountHeaderView: UIView, ChartDelegate {
         chartLoadingView.stopAnimating()
         guard let account = account else { return }
         chartLoadingView.startAnimating()
+        chart.finishTouchingChart()
         account.getBalanceHistoricalData(from: selectedRange.startDate) { (data) in
             // Make sure this is for the latest fetch, by comparing the change index when we started to the current one.
             if self.chartChangeIndex != requiredIndex { return }
@@ -119,6 +97,29 @@ class AccountHeaderView: UIView, ChartDelegate {
                 series.color = Colours.main
                 self.chart.add(series)
                 self.chartLoadingView.stopAnimating()
+            }
+        }
+    }
+    
+    var viewingChartInfo: (Date, Double)? {
+        didSet {
+            if let (date, amount) = viewingChartInfo {
+                self.historicDateLabel.text = formatter.string(from: date)
+                self.amountLabel.amount = amount
+            } else {
+                self.amountLabel.amount = account?.displayBalance ?? 0
+            }
+            // The rest is laying out for changes in the chart being selected or not, we can ignore if that hasn't just changed
+            let isSelected = viewingChartInfo != nil
+            if (oldValue != nil && isSelected) || (oldValue == nil && !isSelected) { return }
+            delegate?.setMovementEnabled(to: !isSelected)
+            let controlAlpha = CGFloat(isSelected ? 0.2 : 1)
+            pageControl.isUserInteractionEnabled = !isSelected
+            chartSegmentedControl.isUserInteractionEnabled = !isSelected
+            UIView.animate(withDuration: 0.25) {
+                self.historicDateLabel.alpha = isSelected ? 1 : 0
+                self.pageControl.alpha = controlAlpha
+                self.chartSegmentedControl.alpha = controlAlpha
             }
         }
     }
@@ -139,10 +140,13 @@ class AccountHeaderView: UIView, ChartDelegate {
     
     func didTouchChart(_ chart: Chart, indexes: [Int?], x: Float, left: CGFloat) {
         // User touched chart
+        guard let index = indexes.first ?? nil, let (date, amount) = chart.series.first?.data[index] else { return }
+        viewingChartInfo = (Date.init(timeIntervalSinceReferenceDate: TimeInterval(date)), Double(amount))
     }
     
     func didFinishTouchingChart(_ chart: Chart) {
         // User swiped outside chart
+        viewingChartInfo = nil
     }
     
     func didEndTouchingChart(_ chart: Chart) {}
@@ -151,4 +155,35 @@ class AccountHeaderView: UIView, ChartDelegate {
 
 protocol AccountHeaderViewDelegate: class {
     func shouldMove(to index: Int)
+    func setMovementEnabled(to enabled: Bool)
+}
+
+// MARK: - Chart View Range Extension
+extension AccountHeaderView {
+    enum ChartViewRange: TimeInterval {
+        static let allOptions: [ChartViewRange] = [.week, .twoWeeks, .month, .threeMonths, .sixMonths, .year, .all]
+        static let defaultOption = ChartViewRange.month
+        case week = 7, twoWeeks = 14, month = 30, threeMonths = 90, sixMonths = 180, year = 365, all = 0
+        
+        var startDate: Date? {
+            guard days > 0 else { return nil }
+            return Date().addingTimeInterval(-60 * 60 * 24 * days)
+        }
+        
+        var days: TimeInterval {
+            return rawValue
+        }
+        
+        var displayText: String {
+            switch self {
+            case .week: return "1W"
+            case .twoWeeks: return "2W"
+            case .month: return "1M"
+            case .threeMonths: return "3M"
+            case .sixMonths: return "6M"
+            case .year: return "1Y"
+            case .all: return "All"
+            }
+        }
+    }
 }

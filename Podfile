@@ -8,5 +8,5 @@ target 'Bank' do
   # Pods for Bank
   pod 'Plaid'
   pod 'ReachabilitySwift'
-  pod 'SwiftChart'
+  pod 'SwiftChart', :git => 'https://github.com/aydenp/SwiftChart.git'
 end
