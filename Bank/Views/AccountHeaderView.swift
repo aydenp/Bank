@@ -9,7 +9,7 @@
 import UIKit
 import SwiftChart
 
-class AccountHeaderView: UIView {
+class AccountHeaderView: UIView, ChartDelegate {
     weak var delegate: AccountHeaderViewDelegate?
     @IBOutlet weak var amountLabel: AmountLabel!
     @IBOutlet weak var nameLabel: UILabel!
@@ -62,6 +62,7 @@ class AccountHeaderView: UIView {
         chart.labelColor = .clear
         chart.topInset = 0
         chart.bottomInset = 0
+        chart.delegate = self
         chartContainerView.addSubview(chart)
         chartSegmentedControl.removeAllSegments()
         ChartViewRange.allOptions.enumerated().forEach {
@@ -133,6 +134,18 @@ class AccountHeaderView: UIView {
         setupChart()
         SessionDataStorage.shared.selectedChartRange = selectedRange
     }
+    
+    // MARK: - Chart Delegate
+    
+    func didTouchChart(_ chart: Chart, indexes: [Int?], x: Float, left: CGFloat) {
+        // User touched chart
+    }
+    
+    func didFinishTouchingChart(_ chart: Chart) {
+        // User swiped outside chart
+    }
+    
+    func didEndTouchingChart(_ chart: Chart) {}
     
 }
 
