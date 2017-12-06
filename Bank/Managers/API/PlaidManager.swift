@@ -17,7 +17,7 @@ class PlaidManager {
     /// The name of the notification fired when the status of Plaid Manager changes.
     static let statusChangedNotification = Notification.Name(rawValue: "PlaidManagerStatusChangedNotificationName")
     var api: PlaidAPI!
-    var reachability = Reachability()!, userDefaults: UserDefaults?
+    var reachability = Reachability()!, userDefaults: UserDefaults!
     
     private init() {
         // Create API manager with our API info
@@ -72,8 +72,8 @@ class PlaidManager {
     
     /// The currently stored Plaid public token.
     var accessToken: String? {
-        get { return UserDefaults.standard.string(forKey: "PlaidAccessToken") }
-        set { UserDefaults.standard.set(newValue, forKey: "PlaidAccessToken") }
+        get { return userDefaults.string(forKey: "PlaidAccessToken") }
+        set { userDefaults.set(newValue, forKey: "PlaidAccessToken") }
     }
     
     // MARK: - Status

@@ -10,7 +10,7 @@ import UIKit
 
 class AccountViewController: UITableViewController, AccountHeaderViewDelegate {
     weak var delegate: AccountViewControllerDelegate?
-    var account: Account!, index: (Int, Int)?, tapGestureRecognizer: UITapGestureRecognizer!
+    var account: Account!, index: (Int, Int)?, tapGestureRecognizer: UITapGestureRecognizer!, firstAppear = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +32,14 @@ class AccountViewController: UITableViewController, AccountHeaderViewDelegate {
         populateData()
         // Listen for transaction data changes
         NotificationCenter.default.addObserver(self, selector: #selector(populateData), name: SessionDataStorage.transactionsChangedNotification, object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if !firstAppear {
+            reselectCorrectChartViewRange()
+        }
+        firstAppear = false
     }
     
     var headerView: AccountHeaderView {

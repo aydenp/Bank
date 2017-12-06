@@ -56,7 +56,8 @@ class AccountHeaderView: UIView, ChartDelegate {
     }
     
     private var selectedRange: ChartViewRange {
-        return ChartViewRange.allOptions[chartSegmentedControl.selectedSegmentIndex]
+        get { return ChartViewRange.allOptions[chartSegmentedControl.selectedSegmentIndex] }
+        set { chartSegmentedControl.selectedSegmentIndex = ChartViewRange.allOptions.index(of: newValue) }
     }
     
     var account: Account? {
@@ -99,6 +100,10 @@ class AccountHeaderView: UIView, ChartDelegate {
                 self.chartLoadingView.stopAnimating()
             }
         }
+    }
+    
+    func reselectCorrectChartViewRange() {
+        selectedRange = SessionDataStorage.shared.selectedChartRange
     }
     
     var viewingChartInfo: (Date, Double)? {
