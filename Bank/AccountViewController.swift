@@ -37,7 +37,7 @@ class AccountViewController: UITableViewController, AccountHeaderViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if !firstAppear {
-            reselectCorrectChartViewRange()
+            headerView.reselectCorrectChartViewRange()
         }
         firstAppear = false
     }
