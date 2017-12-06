@@ -2,7 +2,7 @@
 
 Please read the following if you intend to ship any of the code in this project.
 
---
+---
 
 This app is **NOT INTENDED TO BE DISTRIBUTED TO MULTIPLE PEOPLE, BUT IS MEANT FOR PERSONAL USE**.
 
