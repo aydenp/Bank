@@ -27,11 +27,11 @@ extension Account {
                 }
             }
             var values = [(Date, Double)]()
-            let now = Date()
-            var currentDate = Calendar.current.startOfDay(for: startDate ?? transactions.first?.date ?? now)
+            var currentDate = Calendar.current.startOfDay(for: Date())
+            let start = Calendar.current.startOfDay(for: startDate ?? transactions.first?.date ?? Date())
             var currentBalance = self.displayBalance
             // Loop through all dates between the start date and now
-            while currentDate <= now {
+            while start <= currentDate {
                 // Find all the transactions that occurred on this day
                 let dayTransactions = transactionsByDate[currentDate] ?? []
                 // Offset our current balance by how much the balance changed that day
@@ -39,7 +39,7 @@ extension Account {
                 // Append this data set to the array
                 values.append((currentDate, currentBalance))
                 // Move our current date to the next day
-                currentDate = Calendar.current.date(byAdding: .day, value: 1, to: currentDate)!
+                currentDate = Calendar.current.date(byAdding: .day, value: -1, to: currentDate)!
             }
             completionHandler(values)
         }
