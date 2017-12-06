@@ -15,6 +15,11 @@ class AccountViewController: UITableViewController, AccountHeaderViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Add refresh control
+        refreshControl = UIRefreshControl()
+        refreshControl!.addTarget(self, action: #selector(shouldRefresh), for: .valueChanged)
+        // Listen for when refreshes finish
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshDidFinish), name: ViewController.finishedRefreshingDataNotification, object: nil)
         // Setup header view
         headerView.account = account
         headerView.accountIndex = index
@@ -58,6 +63,18 @@ class AccountViewController: UITableViewController, AccountHeaderViewDelegate {
             if !movementEnabled {
                 tableView.setContentOffset(CGPoint(x: -tableView.contentInset.left, y: -tableView.adjustedContentInset.top), animated: true)
             }
+        }
+    }
+    
+    // MARK: - Refresh Control Handling
+    
+    @objc func shouldRefresh() {
+        NotificationCenter.default.post(name: ViewController.shouldRefreshDataNotification, object: nil)
+    }
+    
+    @objc func refreshDidFinish() {
+        DispatchQueue.main.async {
+            self.refreshControl!.endRefreshing()
         }
     }
     

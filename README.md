@@ -20,7 +20,7 @@ This app uses the [Plaid API](https://www.plaid.com) to fetch information about 
 
 ## IMPORTANT: Production Usage
 
-**This project is meant for personal use.**. If you plan to ship any of the code, [please read this](/production-usage.md) to **ensure you distribute it safely.**
+**This project is meant for personal use.** If you plan to ship any of the code, [please read this](/production-usage.md) to **ensure you distribute it safely.**
 
 ## Reporting Issues
 

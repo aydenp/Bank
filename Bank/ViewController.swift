@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, AccountViewControllerDelegate, NoAccountsViewControllerDelegate {
+    static let shouldRefreshDataNotification = Notification.Name(rawValue: "ViewControllerShouldRefreshDataNotificationName")
+    static let finishedRefreshingDataNotification = Notification.Name(rawValue: "ViewControllerFinishedRefreshingDataNotificationName")
     var statusViewController: StatusViewController?
     var statusBarOverlayView: StatusBarOverlayView!
     var isExchanging = false
@@ -38,18 +40,30 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource, UIPa
         // Listen for and reload on fetched bank account changes
         NotificationCenter.default.addObserver(self, selector: #selector(reloadViewControllers), name: SessionDataStorage.accountsChangedNotification, object: nil)
         
+        // Listen for others wanting data refresh
+        NotificationCenter.default.addObserver(self, selector: #selector(startLoading), name: ViewController.shouldRefreshDataNotification, object: nil)
+        
         setupStatus()
     }
     
     /// Called when we're ready to start finding out about the linked accounts.
-    func startLoading() {
+    @objc func startLoading() {
         PlaidManager.shared.api.getTransactions { (transactions, accounts, error) in
+            let alreadyHasData = SessionDataStorage.shared.accounts != nil
+            if alreadyHasData {
+                // Notify others we finished refreshing
+                NotificationCenter.default.post(name: ViewController.finishedRefreshingDataNotification, object: nil)
+            }
             guard error == nil, let transactions = transactions, let accounts = accounts else {
                 print("Couldn't load bank accounts:", error?.localizedDescription ?? "no error")
-                (self.statusViewController ?? self).showAlert(title: "Couldn't Load Bank Accounts", message: error?.localizedDescription ?? "An unknown error occurred while attempting to load your bank accounts.", actions: [.cancel("Retry") { _ in self.startLoading() }, .normal("Unlink Bank") { _ in
+                func handleRetry(_ action: UIAlertAction) {
+                    self.startLoading()
+                }
+                let actions: [UIAlertAction] = alreadyHasData ?  [.normal("Retry", handler: handleRetry), .cancel] : [.cancel("Retry", handler: handleRetry), .normal("Unlink Bank") { _ in
                     PlaidManager.shared.accessToken = nil
                     self.determineStatus()
-                }])
+                }]
+                (self.statusViewController ?? self).showAlert(title: "Couldn't Load Bank Accounts", message: error?.localizedDescription ?? "An unknown error occurred while attempting to load your bank accounts.", actions: actions)
                 return
             }
             print("Got accounts from server")
