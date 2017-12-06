@@ -17,14 +17,23 @@ extension Account {
         OperationQueue().addOperation {
             // Get transactions, oldest first
             let transactions = self.transactions.sorted { $0.date < $1.date }
+            var transactionsByDate = [Date: [Transaction]]()
+            transactions.forEach {
+                let day = Calendar.current.startOfDay(for: $0.date)
+                if transactionsByDate[day] == nil {
+                    transactionsByDate[day] = [$0]
+                } else {
+                    transactionsByDate[day]!.append($0)
+                }
+            }
             var values = [(Date, Double)]()
             let now = Date()
-            var currentDate = startDate ?? transactions.first?.date ?? now
+            var currentDate = Calendar.current.startOfDay(for: startDate ?? transactions.first?.date ?? now)
             var currentBalance = self.displayBalance
             // Loop through all dates between the start date and now
             while currentDate <= now {
                 // Find all the transactions that occurred on this day
-                let dayTransactions = transactions.filter { Calendar.current.isDate(currentDate, inSameDayAs: $0.date) }
+                let dayTransactions = transactionsByDate[currentDate] ?? []
                 // Offset our current balance by how much the balance changed that day
                 currentBalance += dayTransactions.map { -$0.amount }.reduce(0, +)
                 // Append this data set to the array
