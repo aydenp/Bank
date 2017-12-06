@@ -73,6 +73,7 @@
 		C3BCF7331FCF5C130010497E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3BCF7391FCFB8FA0010497E /* PlaidManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaidManager.swift; sourceTree = "<group>"; };
 		C3BCF73B1FCFBD620010497E /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		C3CAA3DD1FD7CAAA001FAE43 /* Bank.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bank.entitlements; sourceTree = "<group>"; };
 		C3CBCA921FD303B300010AA8 /* Plaid.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Plaid.plist; sourceTree = SOURCE_ROOT; };
 		C3CBCA941FD3075D00010AA8 /* AccessTokenExchangeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenExchangeResponse.swift; sourceTree = "<group>"; };
 		C3CBCA961FD3079E00010AA8 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
@@ -141,6 +142,7 @@
 		C3BCF7261FCF5C130010497E /* Bank */ = {
 			isa = PBXGroup;
 			children = (
+				C3CAA3DD1FD7CAAA001FAE43 /* Bank.entitlements */,
 				C3BCF7271FCF5C130010497E /* AppDelegate.swift */,
 				C3BCF7291FCF5C130010497E /* ViewController.swift */,
 				C3CBCAA61FD3186700010AA8 /* ViewController+Status.swift */,
@@ -154,13 +156,29 @@
 				C3F578051FD2EA390017EE17 /* Views */,
 				C3CBCA981FD30B0500010AA8 /* Extensions */,
 				C3CBCAA31FD313B300010AA8 /* Models */,
-				C3F577FD1FD2DCF10017EE17 /* API */,
-				C3CBCA921FD303B300010AA8 /* Plaid.plist */,
-				C3CBCAB01FD4491800010AA8 /* SessionDataStorage.swift */,
-				C3CBCABE1FD4873D00010AA8 /* PeriodicFetchDataStorage.swift */,
+				C3CAA3DC1FD7CA58001FAE43 /* Managers */,
 				C31612991FD4F1D2000EC5ED /* Colours.swift */,
+				C3CBCA921FD303B300010AA8 /* Plaid.plist */,
 			);
 			path = Bank;
+			sourceTree = "<group>";
+		};
+		C3CAA3DB1FD7CA47001FAE43 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				C3CBCAB01FD4491800010AA8 /* SessionDataStorage.swift */,
+				C3CBCABE1FD4873D00010AA8 /* PeriodicFetchDataStorage.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		C3CAA3DC1FD7CA58001FAE43 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C3F577FD1FD2DCF10017EE17 /* API */,
+				C3CAA3DB1FD7CA47001FAE43 /* Storage */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		C3CBCA981FD30B0500010AA8 /* Extensions */ = {
@@ -288,6 +306,11 @@
 					C3BCF7231FCF5C130010497E = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -550,6 +573,7 @@
 			baseConfigurationReference = 37DDCB4EA2B28A948C846623 /* Pods-Bank.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Bank/Bank.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6N2S3YHMFB;
 				INFOPLIST_FILE = Bank/Info.plist;
@@ -566,6 +590,7 @@
 			baseConfigurationReference = A313A1E6671600F88ED6B46E /* Pods-Bank.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Bank/Bank.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6N2S3YHMFB;
 				INFOPLIST_FILE = Bank/Info.plist;

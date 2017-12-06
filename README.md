@@ -16,7 +16,11 @@ This app uses the [Plaid API](https://www.plaid.com) to fetch information about 
 
 4. Fill in Plaid.plist with your API information from Plaid.
 
-5. Build the app and install it on your iOS device.
+5. Change the app bundle identifier and group identifiers to your own values, and change the team to your own.
+
+6. Update the app group identifier in `PlaidManager.swift` to the one you created in the previous step (static variable at top called `groupIdentifier`).
+
+7. Build the app and install it on your iOS device.
 
 ## IMPORTANT: Production Usage
 

@@ -12,13 +12,23 @@ import ReachabilitySwift
 
 class PlaidManager {
     static let shared = PlaidManager()
+    /// The app group to use to store account information
+    static let groupIdentifier = "group.madebyayden.ios.Bank"
     /// The name of the notification fired when the status of Plaid Manager changes.
     static let statusChangedNotification = Notification.Name(rawValue: "PlaidManagerStatusChangedNotificationName")
     var api: PlaidAPI!
-    var reachability = Reachability()!
+    var reachability = Reachability()!, userDefaults: UserDefaults?
     
     private init() {
+        // Create API manager with our API info
         api = info.createAPI()
+        // Setup user defaults
+        userDefaults = UserDefaults(suiteName: PlaidManager.groupIdentifier)
+        if userDefaults == nil {
+            print("Couldn't initialize user defaults with the app group identifier you specified. Falling back to app-only storage for now, but you should fix this if you want the today widget to work.")
+            userDefaults = .standard
+        }
+        // Start network reachability notifier
         do {
             try reachability.startNotifier()
         } catch {
