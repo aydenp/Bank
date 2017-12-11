@@ -57,7 +57,7 @@ class AccountViewController: UITableViewController, AccountHeaderViewDelegate {
         didSet {
             if oldValue == movementEnabled { return }
             // Hide scroll indicators, because we lock scrolling in elsewhere and they still show when dragging
-            tableView.showsHorizontalScrollIndicator = movementEnabled
+            tableView.showsVerticalScrollIndicator = movementEnabled
             // Fade out cells
             UIView.animate(withDuration: 0.25) {
                 self.tableView.visibleCells.forEach { cell in
