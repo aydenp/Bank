@@ -2,6 +2,8 @@
 
 A simple iOS app for viewing your bank account balance and transactions.
 
+![Screenshots](/Assets/Screenshot.png)
+
 ## How does it work?
 
 This app uses the [Plaid API](https://www.plaid.com) to fetch information about your bank account(s).

@@ -10,7 +10,7 @@ import Foundation
 
 class PlaidAPI {
     let rootServerURL: String, clientID: String, secret: String
-    let debugEnabled = false
+    let debugEnabled = true
     
     init(rootServerURL: String, clientID: String, secret: String) {
         self.rootServerURL = rootServerURL

@@ -18,7 +18,7 @@ struct Account: Codable, Equatable {
     /// The account's name.
     let name: String
     /// The last four digit's of the account number.
-    let mask: String
+    let mask: String?
     /// The official account name, given by the institution.
     let officialName: String
     /// The type of the account.
