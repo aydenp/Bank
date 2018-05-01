@@ -38,5 +38,5 @@ Feel free to contribute to the source code of Bank to make it something even bet
 
 ## License
 
-This project is licensed under the [MIT license](/LICENSE). Please make sure you comply with its terms while using the library.
+This project is licensed under the [MIT license](/LICENSE). Please make sure you comply with its terms while using it in any way.
 
