@@ -2,7 +2,7 @@
 //  PLKConstants.h
 //  LinkKit
 //
-//  Copyright © 2016 Plaid Technologies, Inc. All rights reserved.
+//  Copyright © 2016 Plaid Inc. All rights reserved.
 //
 
 #ifndef PLKConstants_h
@@ -29,36 +29,42 @@ typedef NS_OPTIONS(NSInteger, PLKProduct) {
     PLKProductIncome       = 1 << 1,
 
     /// Account and transaction data to better serve users.
-    PLKProductConnect      = 1 << 2,
-    /// APIv2 equivalent of PLKProductConnect.
     PLKProductTransactions = 1 << 2,
+    /// Legacy API equivalent of PLKProductTransactions.
+    PLKProductConnect DEPRECATED_MSG_ATTRIBUTE("the legacy API is no longer supported. Use APIv2 and PLKProductTransactions instead") = 1 << 2,
 
     /// Verify user identities with bank account data to reduce fraud.
-    PLKProductInfo         = 1 << 3,
-    /// APIv2 equivalent of PLKProductInfo
     PLKProductIdentity     = 1 << 3,
+    /// Legacy API equivalent of PLKProductIdentity
+    PLKProductInfo DEPRECATED_MSG_ATTRIBUTE("the legacy API is no longer supported. Use APIv2 and PLKProductIdentity instead") = 1 << 3,
+
+    /// Historical snapshots, real-time summaries, and auditable copies.
+    PLKProductAssets       = 1 << 4,
 
     /// For internal use only.
-    PLKProductLongtailAuth = 1 << 4
+    PLKProductLongtailAuth = 1 << 5,
+
+    /// Investments holdings data to better serve users.
+    PLKProductHoldings = 1 << 6
 };
 
 
 /// User completed the Link flow.
 PLK_EXTERN NSString* const kPLKStatusConnected;
 
-/// User prompted to answer security question(s).
+/// User was prompted to answer security question(s).
 PLK_EXTERN NSString* const kPLKStatusRequiresQuestions;
 
-/// User prompted to answer multiple choice question(s).
+/// User was prompted to answer multiple choice question(s).
 PLK_EXTERN NSString* const kPLKStatusRequiresSelections;
 
-/// User prompted to provide a one-time passcode.
+/// User was prompted to provide a one-time passcode.
 PLK_EXTERN NSString* const kPLKStatusRequiresCode;
 
-/// User prompted to select a device on which to receive a one-time passcode.
+/// User was prompted to select a device on which to receive a one-time passcode.
 PLK_EXTERN NSString* const kPLKStatusChooseDevice;
 
-/// User prompted to provide credentials for the selected financial institution or
+/// User was prompted to provide credentials for the selected financial institution or
 /// has not yet selected a financial institution.
 PLK_EXTERN NSString* const kPLKStatusRequiresCredentials;
 
@@ -68,6 +74,12 @@ PLK_EXTERN NSString* const kPLKStatusRequiresRecaptcha;
 /// User exited the Link flow after unsuccessfully (no results returned) searching for
 /// a financial institution.
 PLK_EXTERN NSString* const kPLKStatusInstitutionNotFound;
+
+/// User was prompted to verify micro-deposits.
+PLK_EXTERN NSString* const kPLKStatusRequiresMicrodepositsVerification;
+
+/// User was prompted to verify account and routing number.
+PLK_EXTERN NSString* const kPLKStatusRequiresNumbersVerification;
 
 /// Use this key to obtain the identifier of a Link internal error
 /// from the NSError's userInfo passed to the PLKPlaidLinkViewDelegate

@@ -11,8 +11,6 @@ import Foundation
 struct Account: Codable, Equatable {
     /// The unique ID of the account.
     let id: String
-    /// The ID of the financial institution for this account.
-    let institutionID: String?
     /// This account's balances.
     let balances: Balances
     /// The account's name.
@@ -20,7 +18,7 @@ struct Account: Codable, Equatable {
     /// The last four digit's of the account number.
     let mask: String?
     /// The official account name, given by the institution.
-    let officialName: String
+    let officialName: String?
     /// The type of the account.
     let type: AccountType
     
@@ -29,15 +27,13 @@ struct Account: Codable, Equatable {
         return balances.available ?? balances.current ?? 0
     }
     
-    /// The name of the financial institution for this account.
-    var institutionName: String? {
-        guard let id = institutionID else { return nil }
-        return PeriodicFetchDataStorage.shared.institutions.value(for: id)
+    var item: Item {
+        return SessionDataStorage.shared.item!
     }
     
     /// The name of the financial instutition, if known, followed by the type.
     var institutionDescription: String {
-        let parts = [institutionName, type.rawValue].filter { $0 != nil && $0!.lowercased() != "other" } as! [String]
+        let parts = [item.institutionName, type.rawValue].filter { $0 != nil && $0!.lowercased() != "other" } as! [String]
         if parts.count == 0 {
             // Have no institution name and account description was other. Just return Other at this point.
             return "OTHER"
@@ -47,7 +43,6 @@ struct Account: Codable, Equatable {
     
     enum CodingKeys: String, CodingKey {
         case id = "account_id"
-        case institutionID = "institution_id"
         case officialName = "official_name"
         case balances, name, mask, type
     }
@@ -57,7 +52,7 @@ struct Account: Codable, Equatable {
      - returns: Whether or not the two accounts are the same, ignoring balances.
      */
     func representsSameAccount(as otherAccount: Account) -> Bool {
-        return id == otherAccount.id && institutionID == otherAccount.institutionID && name == otherAccount.name && mask == otherAccount.mask && officialName == otherAccount.officialName && type == otherAccount.type
+        return id == otherAccount.id && item.institutionID == otherAccount.item.institutionID && name == otherAccount.name && mask == otherAccount.mask && officialName == otherAccount.officialName && type == otherAccount.type
     }
     
     static func ==(lhs: Account, rhs: Account) -> Bool {

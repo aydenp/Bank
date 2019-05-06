@@ -15,6 +15,8 @@ class SessionDataStorage {
     
     private init() {}
     
+    var item: Item?
+    
     var accounts: [Account]? {
         didSet {
             if oldValue ?? [] == accounts ?? [] { return }

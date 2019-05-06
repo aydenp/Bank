@@ -8,7 +8,7 @@
 
 import Foundation
 import LinkKit
-import ReachabilitySwift
+import Reachability
 
 class PlaidManager {
     static let shared = PlaidManager()
@@ -38,14 +38,11 @@ class PlaidManager {
     
     /// Setup the Plaid Manager for use, if connected to the internet. If not, wait until we are.
     func setupWhenConnected() {
-        if reachability.isReachable {
-            setup()
-        } else {
-            print("Internet is not currently reachable. Waiting until the next time the user connects to the internet before setting up Plaid Link...")
-            reachability.whenReachable = { _ in
-                print("Gained internet connectivity. Setting up Plaid Link for usage.")
-                self.setup()
-            }
+        guard reachability.connection == .none else { setup(); return }
+        print("Internet is not currently reachable. Waiting until the next time the user connects to the internet before setting up Plaid Link...")
+        reachability.whenReachable = { _ in
+            print("Gained internet connectivity. Setting up Plaid Link for usage.")
+            self.setup()
         }
     }
     

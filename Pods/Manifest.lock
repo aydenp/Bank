@@ -1,18 +1,32 @@
 PODS:
-  - Plaid (1.0.10)
-  - ReachabilitySwift (3)
+  - Plaid (1.1.18)
+  - ReachabilitySwift (4.3.1)
   - SwiftChart (0.5.0)
 
 DEPENDENCIES:
   - Plaid
   - ReachabilitySwift
-  - SwiftChart
+  - SwiftChart (from `https://github.com/aydenp/SwiftChart.git`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Plaid
+    - ReachabilitySwift
+
+EXTERNAL SOURCES:
+  SwiftChart:
+    :git: https://github.com/aydenp/SwiftChart.git
+
+CHECKOUT OPTIONS:
+  SwiftChart:
+    :commit: ed7c331e3a81ceb70e621a6920d3c2865e37bfa7
+    :git: https://github.com/aydenp/SwiftChart.git
 
 SPEC CHECKSUMS:
-  Plaid: 71dd4195243523fb105bd4a8d736edc6d05964c4
-  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
-  SwiftChart: d1d22d2b1c4582f4d561edf97a210059c00ee256
+  Plaid: 88717a71549ca2d12f4cfc101888c94472c10022
+  ReachabilitySwift: 4032e2f59586e11e3b0ebe15b167abdd587a388b
+  SwiftChart: ef5020d30f8a55e32e8e0a4fec51cf67822cff1d
 
-PODFILE CHECKSUM: aa36866ecc1cbbbf85aab8b27b1a35516f21f24c
+PODFILE CHECKSUM: 6029743e06aca1fad99aeb461a010a4cd6a8340a
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.5.3

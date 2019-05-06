@@ -17,6 +17,7 @@
 		C31612961FD4EDB9000EC5ED /* NSAttributedString+LargestFontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31612951FD4EDB9000EC5ED /* NSAttributedString+LargestFontSize.swift */; };
 		C31612981FD4EDF0000EC5ED /* UIColor+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31612971FD4EDF0000EC5ED /* UIColor+Gradient.swift */; };
 		C316129A1FD4F1D2000EC5ED /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31612991FD4F1D2000EC5ED /* Colours.swift */; };
+		C39E074E2280DFFA007E5862 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39E074D2280DFFA007E5862 /* Item.swift */; };
 		C3BCF7281FCF5C130010497E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BCF7271FCF5C130010497E /* AppDelegate.swift */; };
 		C3BCF72A1FCF5C130010497E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BCF7291FCF5C130010497E /* ViewController.swift */; };
 		C3BCF72D1FCF5C130010497E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3BCF72B1FCF5C130010497E /* Main.storyboard */; };
@@ -64,6 +65,7 @@
 		C31612951FD4EDB9000EC5ED /* NSAttributedString+LargestFontSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+LargestFontSize.swift"; sourceTree = "<group>"; };
 		C31612971FD4EDF0000EC5ED /* UIColor+Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Gradient.swift"; sourceTree = "<group>"; };
 		C31612991FD4F1D2000EC5ED /* Colours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colours.swift; sourceTree = "<group>"; };
+		C39E074D2280DFFA007E5862 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		C3BCF7241FCF5C130010497E /* Bank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3BCF7271FCF5C130010497E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3BCF7291FCF5C130010497E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 		C3CBCAA31FD313B300010AA8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C39E074D2280DFFA007E5862 /* Item.swift */,
 				C3CBCAA41FD313BC00010AA8 /* Account.swift */,
 				C31107CE1FD507B600ABF56B /* Account+Transactions.swift */,
 				C3BCF73B1FCFBD620010497E /* Transaction.swift */,
@@ -282,7 +285,6 @@
 				C3BCF7211FCF5C130010497E /* Frameworks */,
 				C3BCF7221FCF5C130010497E /* Resources */,
 				E07E22E1DB7385F460EFC706 /* [CP] Embed Pods Frameworks */,
-				3FB9C0A1524151807688935C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -300,7 +302,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Ayden Panhuyzen";
 				TargetAttributes = {
 					C3BCF7231FCF5C130010497E = {
@@ -347,34 +349,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3FB9C0A1524151807688935C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bank/Pods-Bank-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		9B0FAB9D368ED13888877EBC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Bank-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E07E22E1DB7385F460EFC706 /* [CP] Embed Pods Frameworks */ = {
@@ -383,9 +373,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Bank/Pods-Bank-frameworks.sh",
+				"${PODS_ROOT}/Plaid/ios/LinkKit.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftChart/SwiftChart.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LinkKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftChart.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -413,6 +410,7 @@
 				C3CBCAA71FD3186700010AA8 /* ViewController+Status.swift in Sources */,
 				C3F578021FD2DD8C0017EE17 /* PlaidResponse.swift in Sources */,
 				C3BCF72A1FCF5C130010497E /* ViewController.swift in Sources */,
+				C39E074E2280DFFA007E5862 /* Item.swift in Sources */,
 				C31107D51FD52F0200ABF56B /* RangeSegmentedControl.swift in Sources */,
 				C3CBCA951FD3075D00010AA8 /* AccessTokenExchangeResponse.swift in Sources */,
 				C3CBCAAB1FD3663F00010AA8 /* PlaidAPI+Transactions.swift in Sources */,
@@ -475,6 +473,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -482,6 +481,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -532,6 +532,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -539,6 +540,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

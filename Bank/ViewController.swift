@@ -48,7 +48,7 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource, UIPa
     
     /// Called when we're ready to start finding out about the linked accounts.
     @objc func startLoading() {
-        PlaidManager.shared.api.getTransactions { (transactions, accounts, error) in
+        PlaidManager.shared.api.getTransactions { (item, transactions, accounts, error) in
             let alreadyHasData = SessionDataStorage.shared.accounts != nil
             if alreadyHasData {
                 // Notify others we finished refreshing
@@ -67,6 +67,7 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource, UIPa
                 return
             }
             print("Got accounts from server")
+            SessionDataStorage.shared.item = item
             SessionDataStorage.shared.accounts = accounts
             SessionDataStorage.shared.transactions = transactions
         }
