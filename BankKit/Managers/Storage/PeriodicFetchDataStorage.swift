@@ -8,19 +8,19 @@
 
 import Foundation
 
-class PeriodicFetchDataStorage {
-    static let shared = PeriodicFetchDataStorage()
+public class PeriodicFetchDataStorage {
+    public static let shared = PeriodicFetchDataStorage()
     private init() {}
     
-    let institutions = PeriodicFetchDataStore<String, InstitutionResponse>(name: "institutions", endpoint: "institutions/get", requestBody: ["client_id": PlaidManager.shared.info.clientID, "secret": PlaidManager.shared.info.secret, "count": 500, "offset": 0, "options": ["products": ["transactions"]]]) { $0.institutions.map { ($0.id, $0.name) } }
+    public let institutions = PeriodicFetchDataStore<String, InstitutionResponse>(name: "institutions", endpoint: "institutions/get", requestBody: ["client_id": PlaidManager.shared.info.clientID, "secret": PlaidManager.shared.info.secret, "count": 500, "offset": 0, "options": ["products": ["transactions"]]]) { $0.institutions.map { ($0.id, $0.name) } }
     
-    func setup() {
+    public func setup() {
         // Needed to initialize itself, as it is static and therefore lazy, meaning it's variables (the stores) won't be initialized properly.
         print("Set up periodic fetch data storage for usage.")
     }
 }
 
-class PeriodicFetchDataStore<Element, Response: PlaidResponse> {
+public class PeriodicFetchDataStore<Element, Response: PlaidResponse> {
     private let name: String, endpoint: String, requestBody: [String: Any], transform: (Response) -> [(AnyHashable, Element)]
     private var isFetching = false
     private var data: ([AnyHashable: Element], Date)? {
@@ -36,19 +36,19 @@ class PeriodicFetchDataStore<Element, Response: PlaidResponse> {
         self.fetchIfRequired()
     }
     
-    var dataChangedNotification: Notification.Name {
+    public var dataChangedNotification: Notification.Name {
         return Notification.Name(rawValue: "PeriodicFetchDataStore-\(name)-DataChangedNotificationName")
     }
     
     // MARK: - Accessing
     
     /// Get the value for the specified key, if loaded and existant.
-    func value(for key: AnyHashable) -> Element? {
+    public func value(for key: AnyHashable) -> Element? {
         return data?.0[key]
     }
     
     /// Whether or not the data store currently has any data.
-    var hasData: Bool {
+    public var hasData: Bool {
         return data != nil
     }
     
@@ -61,7 +61,7 @@ class PeriodicFetchDataStore<Element, Response: PlaidResponse> {
     }
     
     /// Check if the periodic data store needs to be fetched again from the server, and do so if necessary.
-    func fetchIfRequired() {
+    public func fetchIfRequired() {
         guard requiresFetch else { return }
         print("We need new data from the server for \(name) periodic data store.")
         fetch()
@@ -91,7 +91,7 @@ class PeriodicFetchDataStore<Element, Response: PlaidResponse> {
     }
     
     /// Start fetching this store's data from the server.
-    func fetch() {
+    public func fetch() {
         func makeRequest(index: Int = 0, data: [(AnyHashable, Element)] = [], completionHandler: @escaping ([(AnyHashable, Element)]) -> Void) {
             var data = data
             print("Starting fetch of data for \(name) periodic data store (index: \(index))...")

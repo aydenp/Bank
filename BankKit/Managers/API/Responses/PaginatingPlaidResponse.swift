@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol PaginatingPlaidResponse: PlaidResponse {
+public protocol PaginatingPlaidResponse: PlaidResponse {
     var total: Int { get }
 }

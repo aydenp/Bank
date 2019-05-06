@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BankKit
 
 class ViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, AccountViewControllerDelegate, NoAccountsViewControllerDelegate {
     static let shouldRefreshDataNotification = Notification.Name(rawValue: "ViewControllerShouldRefreshDataNotificationName")

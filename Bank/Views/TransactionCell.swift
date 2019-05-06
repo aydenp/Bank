@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BankKit
 
 class TransactionCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!

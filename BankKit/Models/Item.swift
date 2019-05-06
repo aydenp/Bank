@@ -8,15 +8,15 @@
 
 import Foundation
 
-struct Item: Codable {
+public struct Item: Codable {
     /// The identifier of this item.
-    let id: String
+    public let id: String
     
     /// The ID of the financial institution for this item.
-    let institutionID: String?
+    public let institutionID: String?
     
     /// The name of the financial institution for this item.
-    var institutionName: String? {
+    public var institutionName: String? {
         guard let id = institutionID else { return nil }
         return PeriodicFetchDataStorage.shared.institutions.value(for: id)
     }

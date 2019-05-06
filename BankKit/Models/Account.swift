@@ -8,31 +8,31 @@
 
 import Foundation
 
-struct Account: Codable, Equatable {
+public struct Account: Codable, Equatable {
     /// The unique ID of the account.
-    let id: String
+    public let id: String
     /// This account's balances.
-    let balances: Balances
+    public let balances: Balances
     /// The account's name.
-    let name: String
+    public let name: String
     /// The last four digit's of the account number.
-    let mask: String?
+    public let mask: String?
     /// The official account name, given by the institution.
-    let officialName: String?
+    public let officialName: String?
     /// The type of the account.
-    let type: AccountType
+    public let type: AccountType
     
     /// The balance to display to the user.
-    var displayBalance: Double {
+    public var displayBalance: Double {
         return balances.available ?? balances.current ?? 0
     }
     
-    var item: Item {
+    public var item: Item {
         return SessionDataStorage.shared.item!
     }
     
     /// The name of the financial instutition, if known, followed by the type.
-    var institutionDescription: String {
+    public var institutionDescription: String {
         let parts = [item.institutionName, type.rawValue].filter { $0 != nil && $0!.lowercased() != "other" } as! [String]
         if parts.count == 0 {
             // Have no institution name and account description was other. Just return Other at this point.
@@ -51,32 +51,32 @@ struct Account: Codable, Equatable {
      Check whether or not two account objects represent the same bank account. Use this over == when you need to ignore balances.
      - returns: Whether or not the two accounts are the same, ignoring balances.
      */
-    func representsSameAccount(as otherAccount: Account) -> Bool {
+    public func representsSameAccount(as otherAccount: Account) -> Bool {
         return id == otherAccount.id && item.institutionID == otherAccount.item.institutionID && name == otherAccount.name && mask == otherAccount.mask && officialName == otherAccount.officialName && type == otherAccount.type
     }
     
-    static func ==(lhs: Account, rhs: Account) -> Bool {
+    public static func ==(lhs: Account, rhs: Account) -> Bool {
         return lhs.representsSameAccount(as: rhs) && lhs.balances == rhs.balances
     }
 }
 
 extension Account {
-    enum AccountType: String, Codable, Equatable {
+    public enum AccountType: String, Codable, Equatable {
         case brokerage, credit, depository, loan, mortgage, other
     }
 }
 
 extension Account {
     /// A struct holding difference account balances.
-    struct Balances: Codable, Equatable {
+    public struct Balances: Codable, Equatable {
         /// The total amount of funds in the account.
-        let current: Double?
+        public let current: Double?
         /// The current balance, minus any outstanding holds or debits not yet posted.
-        let available: Double?
+        public let available: Double?
         /// The account's balance limit.
-        let limit: Double?
+        public let limit: Double?
         
-        static func ==(lhs: Balances, rhs: Balances) -> Bool {
+        public static func ==(lhs: Balances, rhs: Balances) -> Bool {
             return lhs.current == rhs.current && lhs.available == rhs.available && lhs.limit == rhs.limit
         }
     }

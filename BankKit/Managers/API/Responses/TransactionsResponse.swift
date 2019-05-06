@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct TransactionsResponse: PlaidResponse {
+public struct TransactionsResponse: PlaidResponse {
     let item: Item
     let accounts: [Account]
     let transactions: [Transaction] 

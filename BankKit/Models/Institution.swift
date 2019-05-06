@@ -8,18 +8,18 @@
 
 import Foundation
 
-struct Institution: Codable, Equatable {
+public struct Institution: Codable, Equatable {
     /// The unique identifier of this institution
-    let id: String
+    public let id: String
     /// The name of this institution
-    let name: String
+    public let name: String
     
     enum CodingKeys: String, CodingKey {
         case id = "institution_id"
         case name
     }
     
-    static func ==(lhs: Institution, rhs: Institution) -> Bool {
+    public static func ==(lhs: Institution, rhs: Institution) -> Bool {
         return lhs.id == rhs.id && lhs.name == rhs.name
     }
 }

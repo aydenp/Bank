@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BankKit
 import SwiftChart
 
 class AccountHeaderView: UIView, ChartDelegate {
@@ -42,7 +43,7 @@ class AccountHeaderView: UIView, ChartDelegate {
         chart.delegate = self
         chartContainerView.addSubview(chart)
         chartSegmentedControl.removeAllSegments()
-        ChartViewRange.allOptions.enumerated().forEach {
+        SessionDataStorage.ChartViewRange.allCases.enumerated().forEach {
             chartSegmentedControl.insertSegment(withTitle: $0.element.displayText.uppercased(), at: $0.offset, animated: false)
             if $0.element == SessionDataStorage.shared.selectedChartRange {
                 chartSegmentedControl.selectedSegmentIndex = $0.offset
@@ -55,10 +56,10 @@ class AccountHeaderView: UIView, ChartDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(setupData), name: PeriodicFetchDataStorage.shared.institutions.dataChangedNotification, object: nil)
     }
     
-    private var selectedRange: ChartViewRange {
-        get { return ChartViewRange.allOptions[chartSegmentedControl.selectedSegmentIndex] }
+    private var selectedRange: SessionDataStorage.ChartViewRange {
+        get { return SessionDataStorage.ChartViewRange.allCases[chartSegmentedControl.selectedSegmentIndex] }
         set {
-            guard let index = ChartViewRange.allOptions.firstIndex(of: newValue) else { return }
+            guard let index = SessionDataStorage.ChartViewRange.allCases.firstIndex(of: newValue) else { return }
             chartSegmentedControl.selectedSegmentIndex = index
         }
     }
@@ -164,34 +165,4 @@ class AccountHeaderView: UIView, ChartDelegate {
 protocol AccountHeaderViewDelegate: class {
     func shouldMove(to index: Int)
     func setMovementEnabled(to enabled: Bool)
-}
-
-// MARK: - Chart View Range Extension
-extension AccountHeaderView {
-    enum ChartViewRange: TimeInterval {
-        static let allOptions: [ChartViewRange] = [.week, .twoWeeks, .month, .threeMonths, .sixMonths, .year, .all]
-        static let defaultOption = ChartViewRange.month
-        case week = 7, twoWeeks = 14, month = 30, threeMonths = 90, sixMonths = 180, year = 365, all = 0
-        
-        var startDate: Date? {
-            guard days > 0 else { return nil }
-            return Date().addingTimeInterval(-60 * 60 * 24 * days)
-        }
-        
-        var days: TimeInterval {
-            return rawValue
-        }
-        
-        var displayText: String {
-            switch self {
-            case .week: return "1W"
-            case .twoWeeks: return "2W"
-            case .month: return "1M"
-            case .threeMonths: return "3M"
-            case .sixMonths: return "6M"
-            case .year: return "1Y"
-            case .all: return "All"
-            }
-        }
-    }
 }

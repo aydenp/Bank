@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BankKit
 import LinkKit
 
 class StatusViewController: UIViewController, PLKPlaidLinkViewDelegate {

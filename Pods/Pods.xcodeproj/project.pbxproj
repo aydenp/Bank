@@ -3,25 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		056F7D590890361C42DFA914FC73BC35 /* ChartSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CBB96E71CFC8D92E4D87E674B0F4FB /* ChartSeries.swift */; };
 		2BAC38D37002406285141DF0CC0060B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 548E512BD522BAD01ACBC735C262A518 /* Foundation.framework */; };
-		345A6A2574630A93137C179D39DD10E0 /* Pods-Bank-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C392A07452DD493B4177CCD4828EA244 /* Pods-Bank-dummy.m */; };
+		345A6A2574630A93137C179D39DD10E0 /* Pods-Bank-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E09517DD1120655BB44FE1A3BBD3B85 /* Pods-Bank-dummy.m */; };
 		396B5D6BB3EE5BBDEF20ED53B34EEA96 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D750379B1557A43129EE40D9A4D6A29C /* UIKit.framework */; };
 		400B88D0434E8A0184AEFBC6E989EBBF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 548E512BD522BAD01ACBC735C262A518 /* Foundation.framework */; };
 		417730F478E9743C6204F2557F37E5EA /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22955F3E6B25EAE5CB3D1C0781E83650 /* Reachability.swift */; };
 		52D9F4869070A0628785859B894415BC /* ReachabilitySwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E01FFAE949D20F5FE120EE60AC8E09A /* ReachabilitySwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6F4306473CE35FD8A889A1FDDBFB4825 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 548E512BD522BAD01ACBC735C262A518 /* Foundation.framework */; };
 		70B4B5898B73F7201DA1861568DF7FBF /* SwiftChart-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F01E74E1838708AEF7059053888FD3E9 /* SwiftChart-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		86219383DC40A64A8A068434F3B441D4 /* Pods-BankKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D017697C3D942CFA68044AA44E0E030 /* Pods-BankKit-dummy.m */; };
 		98DA4394362A1C9D1E5BA296D84A088E /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE01B6BA17866A27CC7CC1C1E4A1444 /* Chart.swift */; };
+		B151F7383BD0D3AE6A505E27B7C884B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 548E512BD522BAD01ACBC735C262A518 /* Foundation.framework */; };
 		C07C515A0994F8892EF2A177B75180C0 /* ReachabilitySwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DF80E0600829DE7EC6DFEACA425B56C2 /* ReachabilitySwift-dummy.m */; };
 		D472646ABEB6888808024EA9F5B0654B /* SwiftChart-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 440F0C79D91FE7B3714CFA7A7D16F961 /* SwiftChart-dummy.m */; };
-		DF4198CF3FF3DBC7CC736290ACD52EAB /* Pods-Bank-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D16A47EF9759C88DDFB505D32506264 /* Pods-Bank-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DF4198CF3FF3DBC7CC736290ACD52EAB /* Pods-Bank-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 927E54AB61BAE6FD4F3F75946F8ED7FE /* Pods-Bank-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E65ACE83D76D451DB105FEB0FA7440CB /* ChartColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253261719BE1F9370D528B17E92841A5 /* ChartColors.swift */; };
 		E9FDC63586598C86EAD742FD8BEA71F7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C751D74AE05E3D2D94109FDA031889AD /* SystemConfiguration.framework */; };
+		EDB6E1764A378302BE4561CE134BE76D /* Pods-BankKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EB9AFB8905E2AC2E57613ACB5620D52 /* Pods-BankKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F5D57BB729441D5D9B408961469A4178 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28BFACBAC3A77C71163408D807B73D80 /* CoreTelephony.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,44 +43,61 @@
 			remoteGlobalIDString = B61CB73F815FBD871771AF0B1A992AF5;
 			remoteInfo = ReachabilitySwift;
 		};
+		7FE7CB360E9B02819CEDA1056BFB81D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B61CB73F815FBD871771AF0B1A992AF5;
+			remoteInfo = ReachabilitySwift;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0612444313CE093D5FF7EEBA43BB7B9D /* Pods-Bank.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Bank.modulemap"; sourceTree = "<group>"; };
+		0711B6BE10C9CB4FE56FFB6E9D2EC59F /* Pods-BankKit-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BankKit-acknowledgements.plist"; sourceTree = "<group>"; };
 		0E01FFAE949D20F5FE120EE60AC8E09A /* ReachabilitySwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReachabilitySwift-umbrella.h"; sourceTree = "<group>"; };
+		0E24FB15B52A96A1F52B60DE6F0AC597 /* Pods-BankKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BankKit.modulemap"; sourceTree = "<group>"; };
+		10BB460E185ACB1D178F041059BE2040 /* Pods-Bank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bank.release.xcconfig"; sourceTree = "<group>"; };
+		1ACE01712EF3505025943E9C31F8AD75 /* Pods-Bank-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Bank-frameworks.sh"; sourceTree = "<group>"; };
 		1BE01B6BA17866A27CC7CC1C1E4A1444 /* Chart.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Chart.swift; path = Source/Chart.swift; sourceTree = "<group>"; };
+		1BF9F5AF5523F4A1933CA8102B050369 /* Reachability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Reachability.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C63080AF806A2800D0816DB811C1114 /* SwiftChart.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftChart.modulemap; sourceTree = "<group>"; };
+		1E09517DD1120655BB44FE1A3BBD3B85 /* Pods-Bank-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Bank-dummy.m"; sourceTree = "<group>"; };
 		22955F3E6B25EAE5CB3D1C0781E83650 /* Reachability.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Sources/Reachability.swift; sourceTree = "<group>"; };
 		253261719BE1F9370D528B17E92841A5 /* ChartColors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartColors.swift; path = Source/ChartColors.swift; sourceTree = "<group>"; };
+		261323049852385533BF90724D77E86C /* SwiftChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		28BFACBAC3A77C71163408D807B73D80 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
-		2D270E78F5677C2C9B3FC6C7AA9BC25F /* Pods-Bank.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Bank.modulemap"; sourceTree = "<group>"; };
 		3DA7FB4EDBB03F955D513220B348C72D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3EB9AFB8905E2AC2E57613ACB5620D52 /* Pods-BankKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BankKit-umbrella.h"; sourceTree = "<group>"; };
+		438FA56DAF77144CDFE5DAB3765C6CCA /* Pods_BankKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BankKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		440F0C79D91FE7B3714CFA7A7D16F961 /* SwiftChart-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftChart-dummy.m"; sourceTree = "<group>"; };
-		4D30DE9B195E55A0A10E7AD778DB86B1 /* Pods-Bank-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Bank-resources.sh"; sourceTree = "<group>"; };
-		52A72E39E6EBCC7889880ADB7298DA21 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		548E512BD522BAD01ACBC735C262A518 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		625708CC04C687FBA9062DE8F0C975D7 /* Pods-Bank-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Bank-acknowledgements.markdown"; sourceTree = "<group>"; };
 		6282A3043F2174B8EF92479FC9594E8B /* ReachabilitySwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReachabilitySwift-prefix.pch"; sourceTree = "<group>"; };
 		658A48D8428CFEE883CFA088429650A2 /* SwiftChart.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftChart.xcconfig; sourceTree = "<group>"; };
-		6D16A47EF9759C88DDFB505D32506264 /* Pods-Bank-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Bank-umbrella.h"; sourceTree = "<group>"; };
-		83D1E21EB943EB05FF5382EA7C29B483 /* Pods-Bank-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Bank-acknowledgements.plist"; sourceTree = "<group>"; };
-		868D03800EAAC6D94E5E542B8C7E569F /* Pods-Bank-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Bank-acknowledgements.markdown"; sourceTree = "<group>"; };
-		90A137708AC72D066895AC7158421EE1 /* Pods_Bank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Bank.framework; path = "Pods-Bank.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D017697C3D942CFA68044AA44E0E030 /* Pods-BankKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BankKit-dummy.m"; sourceTree = "<group>"; };
+		7474AC690AA85B9ED65C92DE090C5899 /* Pods-BankKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BankKit.release.xcconfig"; sourceTree = "<group>"; };
+		8B25E78816020466AD3D23F649FCBF7C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D9A91E7B5808E5C8F49CBFC5E8C7520 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		927E54AB61BAE6FD4F3F75946F8ED7FE /* Pods-Bank-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Bank-umbrella.h"; sourceTree = "<group>"; };
 		92CBB96E71CFC8D92E4D87E674B0F4FB /* ChartSeries.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartSeries.swift; path = Source/ChartSeries.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		99C9C46ADBB27CD431565390271DD55E /* SwiftChart-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftChart-prefix.pch"; sourceTree = "<group>"; };
-		BA0198C8B3C6BD8B39AAE00CA903ADDD /* Pods-Bank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bank.release.xcconfig"; sourceTree = "<group>"; };
+		B5208590D735035382294864FA7253BF /* Pods-Bank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bank.debug.xcconfig"; sourceTree = "<group>"; };
 		BBD52ECA4794789258A0C2BE608DE2CB /* ReachabilitySwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ReachabilitySwift.modulemap; sourceTree = "<group>"; };
-		C392A07452DD493B4177CCD4828EA244 /* Pods-Bank-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Bank-dummy.m"; sourceTree = "<group>"; };
-		C6BA357157CD055C57D3427B8B6C9B4B /* Pods-Bank-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Bank-frameworks.sh"; sourceTree = "<group>"; };
 		C751D74AE05E3D2D94109FDA031889AD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
-		CB0A328390E7C71CB00D7524A6ABB3CF /* Pods-Bank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bank.debug.xcconfig"; sourceTree = "<group>"; };
-		D360D40FE83F76E841D13E63B2F2A892 /* Reachability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Reachability.framework; path = ReachabilitySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC30B99AA59AEC2712E26FE0F00EBEC1 /* Pods-Bank-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Bank-acknowledgements.plist"; sourceTree = "<group>"; };
+		CE5CE986C4D3674B54F42026F29013A7 /* Pods-Bank-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Bank-resources.sh"; sourceTree = "<group>"; };
+		D127767A55A7F3CA732C686AC81322F0 /* Pods-BankKit-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BankKit-resources.sh"; sourceTree = "<group>"; };
 		D3654CEBBE1E4F9198590AE1221FD4C4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D750379B1557A43129EE40D9A4D6A29C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		D8AD25715933096BB6EE8E4BE731A037 /* LinkKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LinkKit.framework; path = ios/LinkKit.framework; sourceTree = "<group>"; };
 		DA2E0D750B7F59E553561FBDC0B49AE7 /* ReachabilitySwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReachabilitySwift.xcconfig; sourceTree = "<group>"; };
-		DA4E46EE345DDD5730BAF479B27CF483 /* SwiftChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftChart.framework; path = SwiftChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDF5E4D184595EAB4678C857DFC681EA /* Pods-BankKit-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BankKit-acknowledgements.markdown"; sourceTree = "<group>"; };
 		DF80E0600829DE7EC6DFEACA425B56C2 /* ReachabilitySwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ReachabilitySwift-dummy.m"; sourceTree = "<group>"; };
+		EF7B2154754596650C38EFEDC1E7C8B9 /* Pods-BankKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BankKit.debug.xcconfig"; sourceTree = "<group>"; };
 		F01E74E1838708AEF7059053888FD3E9 /* SwiftChart-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftChart-umbrella.h"; sourceTree = "<group>"; };
+		F8041E02D49A91C1BEE1A9C0AB87D086 /* Pods_Bank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +116,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F4306473CE35FD8A889A1FDDBFB4825 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7944767EE347002045F7697385FD7469 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B151F7383BD0D3AE6A505E27B7C884B4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,22 +165,59 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		1AF19C9249C050F44EAE88B76D60FB52 /* Pods-Bank */ = {
+		1859755C95BE49BA343913B512DA4574 /* Pods-BankKit */ = {
 			isa = PBXGroup;
 			children = (
-				52A72E39E6EBCC7889880ADB7298DA21 /* Info.plist */,
-				2D270E78F5677C2C9B3FC6C7AA9BC25F /* Pods-Bank.modulemap */,
-				868D03800EAAC6D94E5E542B8C7E569F /* Pods-Bank-acknowledgements.markdown */,
-				83D1E21EB943EB05FF5382EA7C29B483 /* Pods-Bank-acknowledgements.plist */,
-				C392A07452DD493B4177CCD4828EA244 /* Pods-Bank-dummy.m */,
-				C6BA357157CD055C57D3427B8B6C9B4B /* Pods-Bank-frameworks.sh */,
-				4D30DE9B195E55A0A10E7AD778DB86B1 /* Pods-Bank-resources.sh */,
-				6D16A47EF9759C88DDFB505D32506264 /* Pods-Bank-umbrella.h */,
-				CB0A328390E7C71CB00D7524A6ABB3CF /* Pods-Bank.debug.xcconfig */,
-				BA0198C8B3C6BD8B39AAE00CA903ADDD /* Pods-Bank.release.xcconfig */,
+				8D9A91E7B5808E5C8F49CBFC5E8C7520 /* Info.plist */,
+				0E24FB15B52A96A1F52B60DE6F0AC597 /* Pods-BankKit.modulemap */,
+				DDF5E4D184595EAB4678C857DFC681EA /* Pods-BankKit-acknowledgements.markdown */,
+				0711B6BE10C9CB4FE56FFB6E9D2EC59F /* Pods-BankKit-acknowledgements.plist */,
+				6D017697C3D942CFA68044AA44E0E030 /* Pods-BankKit-dummy.m */,
+				D127767A55A7F3CA732C686AC81322F0 /* Pods-BankKit-resources.sh */,
+				3EB9AFB8905E2AC2E57613ACB5620D52 /* Pods-BankKit-umbrella.h */,
+				EF7B2154754596650C38EFEDC1E7C8B9 /* Pods-BankKit.debug.xcconfig */,
+				7474AC690AA85B9ED65C92DE090C5899 /* Pods-BankKit.release.xcconfig */,
+			);
+			name = "Pods-BankKit";
+			path = "Target Support Files/Pods-BankKit";
+			sourceTree = "<group>";
+		};
+		341997A8A8250BC2EA31ACD7B741714E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F8041E02D49A91C1BEE1A9C0AB87D086 /* Pods_Bank.framework */,
+				438FA56DAF77144CDFE5DAB3765C6CCA /* Pods_BankKit.framework */,
+				1BF9F5AF5523F4A1933CA8102B050369 /* Reachability.framework */,
+				261323049852385533BF90724D77E86C /* SwiftChart.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		38D92625FD7503A42DF8C63E2FD95DFB /* Pods-Bank */ = {
+			isa = PBXGroup;
+			children = (
+				8B25E78816020466AD3D23F649FCBF7C /* Info.plist */,
+				0612444313CE093D5FF7EEBA43BB7B9D /* Pods-Bank.modulemap */,
+				625708CC04C687FBA9062DE8F0C975D7 /* Pods-Bank-acknowledgements.markdown */,
+				CC30B99AA59AEC2712E26FE0F00EBEC1 /* Pods-Bank-acknowledgements.plist */,
+				1E09517DD1120655BB44FE1A3BBD3B85 /* Pods-Bank-dummy.m */,
+				1ACE01712EF3505025943E9C31F8AD75 /* Pods-Bank-frameworks.sh */,
+				CE5CE986C4D3674B54F42026F29013A7 /* Pods-Bank-resources.sh */,
+				927E54AB61BAE6FD4F3F75946F8ED7FE /* Pods-Bank-umbrella.h */,
+				B5208590D735035382294864FA7253BF /* Pods-Bank.debug.xcconfig */,
+				10BB460E185ACB1D178F041059BE2040 /* Pods-Bank.release.xcconfig */,
 			);
 			name = "Pods-Bank";
 			path = "Target Support Files/Pods-Bank";
+			sourceTree = "<group>";
+		};
+		3B89D1FA75CC128594BC0CAA28F9D3C9 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				38D92625FD7503A42DF8C63E2FD95DFB /* Pods-Bank */,
+				1859755C95BE49BA343913B512DA4574 /* Pods-BankKit */,
+			);
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		43C83959B77C4C2E0A0CC3EB7EF0FDA2 /* Plaid */ = {
@@ -160,7 +225,6 @@
 			children = (
 				0C00DB11BFED7781FE20BC6CEB9DE020 /* Frameworks */,
 			);
-			name = Plaid;
 			path = Plaid;
 			sourceTree = "<group>";
 		};
@@ -170,7 +234,6 @@
 				22955F3E6B25EAE5CB3D1C0781E83650 /* Reachability.swift */,
 				5B36C28F8F5DECA083EBA09BABC9393B /* Support Files */,
 			);
-			name = ReachabilitySwift;
 			path = ReachabilitySwift;
 			sourceTree = "<group>";
 		};
@@ -194,8 +257,8 @@
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */,
 				08E9CEDE563A217CBF616F9FDEC27837 /* Pods */,
-				A7FE958689D31E24E4A51964EBD23FD8 /* Products */,
-				F262EEB7A2BF487BF5F0DDAF47907F08 /* Targets Support Files */,
+				341997A8A8250BC2EA31ACD7B741714E /* Products */,
+				3B89D1FA75CC128594BC0CAA28F9D3C9 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -211,16 +274,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/SwiftChart";
-			sourceTree = "<group>";
-		};
-		A7FE958689D31E24E4A51964EBD23FD8 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				90A137708AC72D066895AC7158421EE1 /* Pods_Bank.framework */,
-				D360D40FE83F76E841D13E63B2F2A892 /* Reachability.framework */,
-				DA4E46EE345DDD5730BAF479B27CF483 /* SwiftChart.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		BADBD476E32168189FC08CBE261E31D1 /* iOS */ = {
@@ -242,21 +295,20 @@
 				92CBB96E71CFC8D92E4D87E674B0F4FB /* ChartSeries.swift */,
 				8D2D2CB0563E238CF82502973BAA6D83 /* Support Files */,
 			);
-			name = SwiftChart;
 			path = SwiftChart;
-			sourceTree = "<group>";
-		};
-		F262EEB7A2BF487BF5F0DDAF47907F08 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				1AF19C9249C050F44EAE88B76D60FB52 /* Pods-Bank */,
-			);
-			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		44F79852E8801640E3529E9931728C1C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDB6E1764A378302BE4561CE134BE76D /* Pods-BankKit-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		45AEA265D0B1699CB48A85FFADA757FC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -301,7 +353,26 @@
 			);
 			name = "Pods-Bank";
 			productName = "Pods-Bank";
-			productReference = 90A137708AC72D066895AC7158421EE1 /* Pods_Bank.framework */;
+			productReference = F8041E02D49A91C1BEE1A9C0AB87D086 /* Pods_Bank.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		83BE0C9319115BAD01A4E60D419A8020 /* Pods-BankKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F52BD14DE6028451E748566B35A8E5BE /* Build configuration list for PBXNativeTarget "Pods-BankKit" */;
+			buildPhases = (
+				44F79852E8801640E3529E9931728C1C /* Headers */,
+				019A3248003A0BD8B1CEA752DC59EFDF /* Sources */,
+				7944767EE347002045F7697385FD7469 /* Frameworks */,
+				C3233928FBD9BE96ED8011308D6BB10B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4B714F799F636291D8ECF4C51D7A7D16 /* PBXTargetDependency */,
+			);
+			name = "Pods-BankKit";
+			productName = "Pods-BankKit";
+			productReference = 438FA56DAF77144CDFE5DAB3765C6CCA /* Pods_BankKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		B61CB73F815FBD871771AF0B1A992AF5 /* ReachabilitySwift */ = {
@@ -319,7 +390,7 @@
 			);
 			name = ReachabilitySwift;
 			productName = ReachabilitySwift;
-			productReference = D360D40FE83F76E841D13E63B2F2A892 /* Reachability.framework */;
+			productReference = 1BF9F5AF5523F4A1933CA8102B050369 /* Reachability.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		EE388DE5A38DF8EDEF38C6A413948019 /* SwiftChart */ = {
@@ -337,7 +408,7 @@
 			);
 			name = SwiftChart;
 			productName = SwiftChart;
-			productReference = DA4E46EE345DDD5730BAF479B27CF483 /* SwiftChart.framework */;
+			productReference = 261323049852385533BF90724D77E86C /* SwiftChart.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -354,14 +425,16 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = A7FE958689D31E24E4A51964EBD23FD8 /* Products */;
+			productRefGroup = 341997A8A8250BC2EA31ACD7B741714E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				17F883EE5FE43BEE4DCC6ED9E99B8599 /* Pods-Bank */,
+				83BE0C9319115BAD01A4E60D419A8020 /* Pods-BankKit */,
 				B61CB73F815FBD871771AF0B1A992AF5 /* ReachabilitySwift */,
 				EE388DE5A38DF8EDEF38C6A413948019 /* SwiftChart */,
 			);
@@ -390,9 +463,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C3233928FBD9BE96ED8011308D6BB10B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		019A3248003A0BD8B1CEA752DC59EFDF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86219383DC40A64A8A068434F3B441D4 /* Pods-BankKit-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3DA9ECBD239A52F32A8056731955ED47 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -430,6 +518,12 @@
 			target = EE388DE5A38DF8EDEF38C6A413948019 /* SwiftChart */;
 			targetProxy = 4D31E96FDC856E219D6D155D6A4FB3B1 /* PBXContainerItemProxy */;
 		};
+		4B714F799F636291D8ECF4C51D7A7D16 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ReachabilitySwift;
+			target = B61CB73F815FBD871771AF0B1A992AF5 /* ReachabilitySwift */;
+			targetProxy = 7FE7CB360E9B02819CEDA1056BFB81D5 /* PBXContainerItemProxy */;
+		};
 		AE861433D1EDF4D3D40C46B234F56A49 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ReachabilitySwift;
@@ -439,43 +533,9 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0843239381772F782F6C903892E4EA9E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 658A48D8428CFEE883CFA088429650A2 /* SwiftChart.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftChart/SwiftChart-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftChart/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftChart/SwiftChart.modulemap";
-				PRODUCT_MODULE_NAME = SwiftChart;
-				PRODUCT_NAME = SwiftChart;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		0ADB95EE3239B1394BC702B8B9274D69 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA0198C8B3C6BD8B39AAE00CA903ADDD /* Pods-Bank.release.xcconfig */;
+			baseConfigurationReference = 10BB460E185ACB1D178F041059BE2040 /* Pods-Bank.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -501,8 +561,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -510,9 +569,9 @@
 			};
 			name = Release;
 		};
-		4A246C77D4BA1A26F1103B1D43236773 /* Release */ = {
+		0D5687EBC87F46E376188804E3953669 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA2E0D750B7F59E553561FBDC0B49AE7 /* ReachabilitySwift.xcconfig */;
+			baseConfigurationReference = 658A48D8428CFEE883CFA088429650A2 /* SwiftChart.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -523,20 +582,19 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ReachabilitySwift/ReachabilitySwift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ReachabilitySwift/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftChart/SwiftChart-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftChart/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ReachabilitySwift/ReachabilitySwift.modulemap";
-				PRODUCT_MODULE_NAME = Reachability;
-				PRODUCT_NAME = Reachability;
+				MODULEMAP_FILE = "Target Support Files/SwiftChart/SwiftChart.modulemap";
+				PRODUCT_MODULE_NAME = SwiftChart;
+				PRODUCT_NAME = SwiftChart;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -544,10 +602,13 @@
 			};
 			name = Release;
 		};
-		69DB3E673C3551FB8F5846FF8D694EAB /* Debug */ = {
+		1043A9F5952EB6C801704D9C97362FF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA2E0D750B7F59E553561FBDC0B49AE7 /* ReachabilitySwift.xcconfig */;
+			baseConfigurationReference = EF7B2154754596650C38EFEDC1E7C8B9 /* Pods-BankKit.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -557,19 +618,21 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ReachabilitySwift/ReachabilitySwift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ReachabilitySwift/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-BankKit/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ReachabilitySwift/ReachabilitySwift.modulemap";
-				PRODUCT_MODULE_NAME = Reachability;
-				PRODUCT_NAME = Reachability;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BankKit/Pods-BankKit.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -578,7 +641,7 @@
 		};
 		82EAFA6EB0419458A63E1F65B4C40B9F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CB0A328390E7C71CB00D7524A6ABB3CF /* Pods-Bank.debug.xcconfig */;
+			baseConfigurationReference = B5208590D735035382294864FA7253BF /* Pods-Bank.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -606,6 +669,38 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8BA4DA117EEBD657AEAE865861F69B3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 658A48D8428CFEE883CFA088429650A2 /* SwiftChart.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftChart/SwiftChart-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftChart/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftChart/SwiftChart.modulemap";
+				PRODUCT_MODULE_NAME = SwiftChart;
+				PRODUCT_NAME = SwiftChart;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -735,10 +830,11 @@
 			};
 			name = Debug;
 		};
-		C3A3C5B3D321FBADA3520975CA574DC8 /* Debug */ = {
+		E6798D29C6F293C02F0C184A1B4D0647 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 658A48D8428CFEE883CFA088429650A2 /* SwiftChart.xcconfig */;
+			baseConfigurationReference = DA2E0D750B7F59E553561FBDC0B49AE7 /* ReachabilitySwift.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -748,24 +844,95 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftChart/SwiftChart-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftChart/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/ReachabilitySwift/ReachabilitySwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ReachabilitySwift/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftChart/SwiftChart.modulemap";
-				PRODUCT_MODULE_NAME = SwiftChart;
-				PRODUCT_NAME = SwiftChart;
+				MODULEMAP_FILE = "Target Support Files/ReachabilitySwift/ReachabilitySwift.modulemap";
+				PRODUCT_MODULE_NAME = Reachability;
+				PRODUCT_NAME = Reachability;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EB70E9AB6BF9F206863A6BDE31715968 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA2E0D750B7F59E553561FBDC0B49AE7 /* ReachabilitySwift.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ReachabilitySwift/ReachabilitySwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ReachabilitySwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ReachabilitySwift/ReachabilitySwift.modulemap";
+				PRODUCT_MODULE_NAME = Reachability;
+				PRODUCT_NAME = Reachability;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		F25F6518F42F6008204C8EC0A61F9585 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7474AC690AA85B9ED65C92DE090C5899 /* Pods-BankKit.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BankKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BankKit/Pods-BankKit.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -791,8 +958,8 @@
 		A38923B90F51691314FC6AB4D0FD8340 /* Build configuration list for PBXNativeTarget "ReachabilitySwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				69DB3E673C3551FB8F5846FF8D694EAB /* Debug */,
-				4A246C77D4BA1A26F1103B1D43236773 /* Release */,
+				EB70E9AB6BF9F206863A6BDE31715968 /* Debug */,
+				E6798D29C6F293C02F0C184A1B4D0647 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -800,8 +967,17 @@
 		F1AFE550527BF3073279F0B2C042AF0F /* Build configuration list for PBXNativeTarget "SwiftChart" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C3A3C5B3D321FBADA3520975CA574DC8 /* Debug */,
-				0843239381772F782F6C903892E4EA9E /* Release */,
+				8BA4DA117EEBD657AEAE865861F69B3D /* Debug */,
+				0D5687EBC87F46E376188804E3953669 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F52BD14DE6028451E748566B35A8E5BE /* Build configuration list for PBXNativeTarget "Pods-BankKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1043A9F5952EB6C801704D9C97362FF4 /* Debug */,
+				F25F6518F42F6008204C8EC0A61F9585 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

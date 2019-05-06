@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct PlaidError: LocalizedError {
+public struct PlaidError: LocalizedError {
     var response: ErrorResponse?
     
-    var errorDescription: String? { return response?.message }
-    var failureReason: String? { return response?.message }
+    public var errorDescription: String? { return response?.message }
+    public var failureReason: String? { return response?.message }
 }

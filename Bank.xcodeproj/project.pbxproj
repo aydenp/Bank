@@ -8,53 +8,83 @@
 
 /* Begin PBXBuildFile section */
 		522AF4AFBC5AE29C6CC94469 /* Pods_Bank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8309205B2A03DC256D5ED50F /* Pods_Bank.framework */; };
-		C31107CF1FD507B600ABF56B /* Account+Transactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31107CE1FD507B600ABF56B /* Account+Transactions.swift */; };
 		C31107D11FD51C3700ABF56B /* HairlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31107D01FD51C3700ABF56B /* HairlineView.swift */; };
 		C31107D31FD51C4F00ABF56B /* StatusBarOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31107D21FD51C4F00ABF56B /* StatusBarOverlayView.swift */; };
 		C31107D51FD52F0200ABF56B /* RangeSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31107D41FD52F0200ABF56B /* RangeSegmentedControl.swift */; };
-		C316128E1FD48B5D000EC5ED /* InstitutionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C316128D1FD48B5D000EC5ED /* InstitutionResponse.swift */; };
-		C31612901FD48B7E000EC5ED /* Institution.swift in Sources */ = {isa = PBXBuildFile; fileRef = C316128F1FD48B7E000EC5ED /* Institution.swift */; };
 		C31612961FD4EDB9000EC5ED /* NSAttributedString+LargestFontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31612951FD4EDB9000EC5ED /* NSAttributedString+LargestFontSize.swift */; };
 		C31612981FD4EDF0000EC5ED /* UIColor+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31612971FD4EDF0000EC5ED /* UIColor+Gradient.swift */; };
 		C316129A1FD4F1D2000EC5ED /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31612991FD4F1D2000EC5ED /* Colours.swift */; };
-		C39E074E2280DFFA007E5862 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39E074D2280DFFA007E5862 /* Item.swift */; };
+		C39E07582280E962007E5862 /* BankKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C39E07562280E962007E5862 /* BankKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C39E075B2280E962007E5862 /* BankKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C39E07542280E962007E5862 /* BankKit.framework */; };
+		C39E075C2280E962007E5862 /* BankKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C39E07542280E962007E5862 /* BankKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C39E07612280EABC007E5862 /* PlaidManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BCF7391FCFB8FA0010497E /* PlaidManager.swift */; };
+		C39E07622280EABC007E5862 /* PlaidAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F577FF1FD2DD0F0017EE17 /* PlaidAPI.swift */; };
+		C39E07632280EABC007E5862 /* PlaidAPI+ExchangeTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCA9B1FD312B800010AA8 /* PlaidAPI+ExchangeTokens.swift */; };
+		C39E07642280EABD007E5862 /* PlaidAPI+Transactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCAAA1FD3663F00010AA8 /* PlaidAPI+Transactions.swift */; };
+		C39E07652280EABD007E5862 /* PlaidResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F578011FD2DD8C0017EE17 /* PlaidResponse.swift */; };
+		C39E07662280EABD007E5862 /* PlaidError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F578031FD2DDE40017EE17 /* PlaidError.swift */; };
+		C39E07672280EABD007E5862 /* PaginatingPlaidResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCAC01FD4895000010AA8 /* PaginatingPlaidResponse.swift */; };
+		C39E07682280EABD007E5862 /* AccessTokenExchangeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCA941FD3075D00010AA8 /* AccessTokenExchangeResponse.swift */; };
+		C39E07692280EABD007E5862 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCA961FD3079E00010AA8 /* ErrorResponse.swift */; };
+		C39E076A2280EABD007E5862 /* TransactionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCAAC1FD36A7300010AA8 /* TransactionsResponse.swift */; };
+		C39E076B2280EABD007E5862 /* InstitutionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C316128D1FD48B5D000EC5ED /* InstitutionResponse.swift */; };
+		C39E076C2280EABD007E5862 /* SessionDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCAB01FD4491800010AA8 /* SessionDataStorage.swift */; };
+		C39E076D2280EABD007E5862 /* PeriodicFetchDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCABE1FD4873D00010AA8 /* PeriodicFetchDataStorage.swift */; };
+		C39E076E2280EABD007E5862 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39E074D2280DFFA007E5862 /* Item.swift */; };
+		C39E076F2280EABD007E5862 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCAA41FD313BC00010AA8 /* Account.swift */; };
+		C39E07702280EABD007E5862 /* Account+Transactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31107CE1FD507B600ABF56B /* Account+Transactions.swift */; };
+		C39E07712280EABD007E5862 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BCF73B1FCFBD620010497E /* Transaction.swift */; };
+		C39E07722280EABD007E5862 /* Institution.swift in Sources */ = {isa = PBXBuildFile; fileRef = C316128F1FD48B7E000EC5ED /* Institution.swift */; };
 		C3BCF7281FCF5C130010497E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BCF7271FCF5C130010497E /* AppDelegate.swift */; };
 		C3BCF72A1FCF5C130010497E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BCF7291FCF5C130010497E /* ViewController.swift */; };
 		C3BCF72D1FCF5C130010497E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3BCF72B1FCF5C130010497E /* Main.storyboard */; };
 		C3BCF72F1FCF5C130010497E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3BCF72E1FCF5C130010497E /* Assets.xcassets */; };
 		C3BCF7321FCF5C130010497E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3BCF7301FCF5C130010497E /* LaunchScreen.storyboard */; };
-		C3BCF73A1FCFB8FA0010497E /* PlaidManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BCF7391FCFB8FA0010497E /* PlaidManager.swift */; };
-		C3BCF73C1FCFBD620010497E /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BCF73B1FCFBD620010497E /* Transaction.swift */; };
 		C3CBCA931FD303B300010AA8 /* Plaid.plist in Resources */ = {isa = PBXBuildFile; fileRef = C3CBCA921FD303B300010AA8 /* Plaid.plist */; };
-		C3CBCA951FD3075D00010AA8 /* AccessTokenExchangeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCA941FD3075D00010AA8 /* AccessTokenExchangeResponse.swift */; };
-		C3CBCA971FD3079E00010AA8 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCA961FD3079E00010AA8 /* ErrorResponse.swift */; };
 		C3CBCA9A1FD30B1500010AA8 /* UIViewController+ShorthandAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCA991FD30B1500010AA8 /* UIViewController+ShorthandAlerts.swift */; };
-		C3CBCA9C1FD312B800010AA8 /* PlaidAPI+ExchangeTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCA9B1FD312B800010AA8 /* PlaidAPI+ExchangeTokens.swift */; };
-		C3CBCAA51FD313BC00010AA8 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCAA41FD313BC00010AA8 /* Account.swift */; };
 		C3CBCAA71FD3186700010AA8 /* ViewController+Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCAA61FD3186700010AA8 /* ViewController+Status.swift */; };
 		C3CBCAA91FD342FA00010AA8 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCAA81FD342FA00010AA8 /* AccountViewController.swift */; };
-		C3CBCAAB1FD3663F00010AA8 /* PlaidAPI+Transactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCAAA1FD3663F00010AA8 /* PlaidAPI+Transactions.swift */; };
-		C3CBCAAD1FD36A7300010AA8 /* TransactionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCAAC1FD36A7300010AA8 /* TransactionsResponse.swift */; };
 		C3CBCAAF1FD3731900010AA8 /* NoAccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCAAE1FD3731900010AA8 /* NoAccountsViewController.swift */; };
-		C3CBCAB11FD4491800010AA8 /* SessionDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCAB01FD4491800010AA8 /* SessionDataStorage.swift */; };
 		C3CBCAB41FD45CB500010AA8 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCAB31FD45CB500010AA8 /* TransactionCell.swift */; };
 		C3CBCAB61FD461A400010AA8 /* TransactionAmountLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCAB51FD461A400010AA8 /* TransactionAmountLabel.swift */; };
 		C3CBCAB91FD461E700010AA8 /* AmountLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCAB81FD461E700010AA8 /* AmountLabel.swift */; };
 		C3CBCABB1FD469BA00010AA8 /* BackgroundGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCABA1FD469B900010AA8 /* BackgroundGradientView.swift */; };
 		C3CBCABD1FD4767A00010AA8 /* AccountHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCABC1FD4767A00010AA8 /* AccountHeaderView.swift */; };
-		C3CBCABF1FD4873D00010AA8 /* PeriodicFetchDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCABE1FD4873D00010AA8 /* PeriodicFetchDataStorage.swift */; };
-		C3CBCAC11FD4895000010AA8 /* PaginatingPlaidResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CBCAC01FD4895000010AA8 /* PaginatingPlaidResponse.swift */; };
-		C3F578001FD2DD0F0017EE17 /* PlaidAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F577FF1FD2DD0F0017EE17 /* PlaidAPI.swift */; };
-		C3F578021FD2DD8C0017EE17 /* PlaidResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F578011FD2DD8C0017EE17 /* PlaidResponse.swift */; };
-		C3F578041FD2DDE40017EE17 /* PlaidError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F578031FD2DDE40017EE17 /* PlaidError.swift */; };
 		C3F578071FD2EA480017EE17 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F578061FD2EA480017EE17 /* GradientView.swift */; };
 		C3F578091FD2EAB20017EE17 /* APButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F578081FD2EAB10017EE17 /* APButton.swift */; };
 		C3F5780B1FD2EC170017EE17 /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F5780A1FD2EC170017EE17 /* StatusViewController.swift */; };
+		CA5CFAF1B07C99294D322972 /* Pods_BankKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61A977BB45B77542BDED2381 /* Pods_BankKit.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C39E07592280E962007E5862 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3BCF71C1FCF5C130010497E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C39E07532280E962007E5862;
+			remoteInfo = BankKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C39E07602280E962007E5862 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C39E075C2280E962007E5862 /* BankKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		37DDCB4EA2B28A948C846623 /* Pods-Bank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bank.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bank/Pods-Bank.debug.xcconfig"; sourceTree = "<group>"; };
+		61A977BB45B77542BDED2381 /* Pods_BankKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BankKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8309205B2A03DC256D5ED50F /* Pods_Bank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		90460A64F718DC95CC191807 /* Pods-BankKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BankKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BankKit/Pods-BankKit.debug.xcconfig"; sourceTree = "<group>"; };
 		A313A1E6671600F88ED6B46E /* Pods-Bank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bank.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bank/Pods-Bank.release.xcconfig"; sourceTree = "<group>"; };
 		C31107CE1FD507B600ABF56B /* Account+Transactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account+Transactions.swift"; sourceTree = "<group>"; };
 		C31107D01FD51C3700ABF56B /* HairlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HairlineView.swift; sourceTree = "<group>"; };
@@ -66,6 +96,9 @@
 		C31612971FD4EDF0000EC5ED /* UIColor+Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Gradient.swift"; sourceTree = "<group>"; };
 		C31612991FD4F1D2000EC5ED /* Colours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colours.swift; sourceTree = "<group>"; };
 		C39E074D2280DFFA007E5862 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		C39E07542280E962007E5862 /* BankKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BankKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C39E07562280E962007E5862 /* BankKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BankKit.h; sourceTree = "<group>"; };
+		C39E07572280E962007E5862 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3BCF7241FCF5C130010497E /* Bank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3BCF7271FCF5C130010497E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3BCF7291FCF5C130010497E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,14 +134,24 @@
 		C3F578061FD2EA480017EE17 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		C3F578081FD2EAB10017EE17 /* APButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APButton.swift; sourceTree = "<group>"; };
 		C3F5780A1FD2EC170017EE17 /* StatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
+		CA107F6B816D970F8673C646 /* Pods-BankKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BankKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-BankKit/Pods-BankKit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C39E07512280E962007E5862 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA5CFAF1B07C99294D322972 /* Pods_BankKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C3BCF7211FCF5C130010497E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				522AF4AFBC5AE29C6CC94469 /* Pods_Bank.framework in Frameworks */,
+				C39E075B2280E962007E5862 /* BankKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,14 +162,27 @@
 			isa = PBXGroup;
 			children = (
 				8309205B2A03DC256D5ED50F /* Pods_Bank.framework */,
+				61A977BB45B77542BDED2381 /* Pods_BankKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C39E07552280E962007E5862 /* BankKit */ = {
+			isa = PBXGroup;
+			children = (
+				C39E07562280E962007E5862 /* BankKit.h */,
+				C3CAA3DC1FD7CA58001FAE43 /* Managers */,
+				C3CBCAA31FD313B300010AA8 /* Models */,
+				C39E07572280E962007E5862 /* Info.plist */,
+			);
+			path = BankKit;
 			sourceTree = "<group>";
 		};
 		C3BCF71B1FCF5C130010497E = {
 			isa = PBXGroup;
 			children = (
 				C3BCF7261FCF5C130010497E /* Bank */,
+				C39E07552280E962007E5862 /* BankKit */,
 				C3BCF7251FCF5C130010497E /* Products */,
 				CC4BC4E5F431089F563494E2 /* Pods */,
 				C3924D334E87D78B67F2C6E9 /* Frameworks */,
@@ -137,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				C3BCF7241FCF5C130010497E /* Bank.app */,
+				C39E07542280E962007E5862 /* BankKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -157,8 +214,6 @@
 				C3BCF7331FCF5C130010497E /* Info.plist */,
 				C3F578051FD2EA390017EE17 /* Views */,
 				C3CBCA981FD30B0500010AA8 /* Extensions */,
-				C3CBCAA31FD313B300010AA8 /* Models */,
-				C3CAA3DC1FD7CA58001FAE43 /* Managers */,
 				C31612991FD4F1D2000EC5ED /* Colours.swift */,
 				C3CBCA921FD303B300010AA8 /* Plaid.plist */,
 			);
@@ -269,13 +324,45 @@
 			children = (
 				37DDCB4EA2B28A948C846623 /* Pods-Bank.debug.xcconfig */,
 				A313A1E6671600F88ED6B46E /* Pods-Bank.release.xcconfig */,
+				90460A64F718DC95CC191807 /* Pods-BankKit.debug.xcconfig */,
+				CA107F6B816D970F8673C646 /* Pods-BankKit.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		C39E074F2280E962007E5862 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C39E07582280E962007E5862 /* BankKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		C39E07532280E962007E5862 /* BankKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C39E075D2280E962007E5862 /* Build configuration list for PBXNativeTarget "BankKit" */;
+			buildPhases = (
+				4D4CC77C6C001488FAA02841 /* [CP] Check Pods Manifest.lock */,
+				C39E074F2280E962007E5862 /* Headers */,
+				C39E07502280E962007E5862 /* Sources */,
+				C39E07512280E962007E5862 /* Frameworks */,
+				C39E07522280E962007E5862 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BankKit;
+			productName = BankKit;
+			productReference = C39E07542280E962007E5862 /* BankKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		C3BCF7231FCF5C130010497E /* Bank */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C3BCF7361FCF5C130010497E /* Build configuration list for PBXNativeTarget "Bank" */;
@@ -285,10 +372,12 @@
 				C3BCF7211FCF5C130010497E /* Frameworks */,
 				C3BCF7221FCF5C130010497E /* Resources */,
 				E07E22E1DB7385F460EFC706 /* [CP] Embed Pods Frameworks */,
+				C39E07602280E962007E5862 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C39E075A2280E962007E5862 /* PBXTargetDependency */,
 			);
 			name = Bank;
 			productName = Bank;
@@ -305,6 +394,10 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Ayden Panhuyzen";
 				TargetAttributes = {
+					C39E07532280E962007E5862 = {
+						CreatedOnToolsVersion = 10.2.1;
+						ProvisioningStyle = Automatic;
+					};
 					C3BCF7231FCF5C130010497E = {
 						CreatedOnToolsVersion = 9.1;
 						LastSwiftMigration = 1020;
@@ -331,11 +424,19 @@
 			projectRoot = "";
 			targets = (
 				C3BCF7231FCF5C130010497E /* Bank */,
+				C39E07532280E962007E5862 /* BankKit */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C39E07522280E962007E5862 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C3BCF7221FCF5C130010497E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -350,6 +451,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4D4CC77C6C001488FAA02841 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BankKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9B0FAB9D368ED13888877EBC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -375,15 +498,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Bank/Pods-Bank-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftChart/SwiftChart.framework",
 				"${PODS_ROOT}/Plaid/ios/LinkKit.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftChart/SwiftChart.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftChart.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LinkKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftChart.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -393,52 +516,67 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C39E07502280E962007E5862 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C39E07722280EABD007E5862 /* Institution.swift in Sources */,
+				C39E07632280EABC007E5862 /* PlaidAPI+ExchangeTokens.swift in Sources */,
+				C39E07662280EABD007E5862 /* PlaidError.swift in Sources */,
+				C39E076D2280EABD007E5862 /* PeriodicFetchDataStorage.swift in Sources */,
+				C39E07652280EABD007E5862 /* PlaidResponse.swift in Sources */,
+				C39E076E2280EABD007E5862 /* Item.swift in Sources */,
+				C39E076F2280EABD007E5862 /* Account.swift in Sources */,
+				C39E07712280EABD007E5862 /* Transaction.swift in Sources */,
+				C39E07702280EABD007E5862 /* Account+Transactions.swift in Sources */,
+				C39E076A2280EABD007E5862 /* TransactionsResponse.swift in Sources */,
+				C39E07682280EABD007E5862 /* AccessTokenExchangeResponse.swift in Sources */,
+				C39E07612280EABC007E5862 /* PlaidManager.swift in Sources */,
+				C39E07672280EABD007E5862 /* PaginatingPlaidResponse.swift in Sources */,
+				C39E07692280EABD007E5862 /* ErrorResponse.swift in Sources */,
+				C39E076B2280EABD007E5862 /* InstitutionResponse.swift in Sources */,
+				C39E07642280EABD007E5862 /* PlaidAPI+Transactions.swift in Sources */,
+				C39E076C2280EABD007E5862 /* SessionDataStorage.swift in Sources */,
+				C39E07622280EABC007E5862 /* PlaidAPI.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C3BCF7201FCF5C130010497E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3CBCA9C1FD312B800010AA8 /* PlaidAPI+ExchangeTokens.swift in Sources */,
 				C316129A1FD4F1D2000EC5ED /* Colours.swift in Sources */,
 				C31612981FD4EDF0000EC5ED /* UIColor+Gradient.swift in Sources */,
 				C3CBCAAF1FD3731900010AA8 /* NoAccountsViewController.swift in Sources */,
 				C31612961FD4EDB9000EC5ED /* NSAttributedString+LargestFontSize.swift in Sources */,
 				C3F578091FD2EAB20017EE17 /* APButton.swift in Sources */,
-				C3BCF73A1FCFB8FA0010497E /* PlaidManager.swift in Sources */,
 				C3F5780B1FD2EC170017EE17 /* StatusViewController.swift in Sources */,
-				C3CBCA971FD3079E00010AA8 /* ErrorResponse.swift in Sources */,
 				C31107D11FD51C3700ABF56B /* HairlineView.swift in Sources */,
-				C31612901FD48B7E000EC5ED /* Institution.swift in Sources */,
 				C3CBCAA71FD3186700010AA8 /* ViewController+Status.swift in Sources */,
-				C3F578021FD2DD8C0017EE17 /* PlaidResponse.swift in Sources */,
 				C3BCF72A1FCF5C130010497E /* ViewController.swift in Sources */,
-				C39E074E2280DFFA007E5862 /* Item.swift in Sources */,
 				C31107D51FD52F0200ABF56B /* RangeSegmentedControl.swift in Sources */,
-				C3CBCA951FD3075D00010AA8 /* AccessTokenExchangeResponse.swift in Sources */,
-				C3CBCAAB1FD3663F00010AA8 /* PlaidAPI+Transactions.swift in Sources */,
-				C3CBCAC11FD4895000010AA8 /* PaginatingPlaidResponse.swift in Sources */,
-				C3BCF73C1FCFBD620010497E /* Transaction.swift in Sources */,
 				C3CBCAB41FD45CB500010AA8 /* TransactionCell.swift in Sources */,
 				C3CBCABB1FD469BA00010AA8 /* BackgroundGradientView.swift in Sources */,
 				C3CBCAA91FD342FA00010AA8 /* AccountViewController.swift in Sources */,
-				C31107CF1FD507B600ABF56B /* Account+Transactions.swift in Sources */,
-				C3CBCAA51FD313BC00010AA8 /* Account.swift in Sources */,
-				C3CBCAAD1FD36A7300010AA8 /* TransactionsResponse.swift in Sources */,
-				C3CBCABF1FD4873D00010AA8 /* PeriodicFetchDataStorage.swift in Sources */,
 				C3CBCAB91FD461E700010AA8 /* AmountLabel.swift in Sources */,
-				C3F578001FD2DD0F0017EE17 /* PlaidAPI.swift in Sources */,
-				C316128E1FD48B5D000EC5ED /* InstitutionResponse.swift in Sources */,
-				C3CBCAB11FD4491800010AA8 /* SessionDataStorage.swift in Sources */,
 				C3BCF7281FCF5C130010497E /* AppDelegate.swift in Sources */,
 				C3CBCAB61FD461A400010AA8 /* TransactionAmountLabel.swift in Sources */,
 				C31107D31FD51C4F00ABF56B /* StatusBarOverlayView.swift in Sources */,
 				C3F578071FD2EA480017EE17 /* GradientView.swift in Sources */,
 				C3CBCA9A1FD30B1500010AA8 /* UIViewController+ShorthandAlerts.swift in Sources */,
-				C3F578041FD2DDE40017EE17 /* PlaidError.swift in Sources */,
 				C3CBCABD1FD4767A00010AA8 /* AccountHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C39E075A2280E962007E5862 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C39E07532280E962007E5862 /* BankKit */;
+			targetProxy = C39E07592280E962007E5862 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C3BCF72B1FCF5C130010497E /* Main.storyboard */ = {
@@ -460,6 +598,63 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C39E075E2280E962007E5862 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90460A64F718DC95CC191807 /* Pods-BankKit.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 6N2S3YHMFB;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = BankKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = madebyayden.ios.frameworks.BankKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C39E075F2280E962007E5862 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA107F6B816D970F8673C646 /* Pods-BankKit.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 6N2S3YHMFB;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = BankKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = madebyayden.ios.frameworks.BankKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		C3BCF7341FCF5C130010497E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -575,6 +770,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 37DDCB4EA2B28A948C846623 /* Pods-Bank.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Bank/Bank.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -592,6 +788,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A313A1E6671600F88ED6B46E /* Pods-Bank.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Bank/Bank.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -608,6 +805,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C39E075D2280E962007E5862 /* Build configuration list for PBXNativeTarget "BankKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C39E075E2280E962007E5862 /* Debug */,
+				C39E075F2280E962007E5862 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C3BCF71F1FCF5C130010497E /* Build configuration list for PBXProject "Bank" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

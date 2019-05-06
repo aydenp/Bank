@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BankKit
 
 class AccountViewController: UITableViewController, AccountHeaderViewDelegate {
     weak var delegate: AccountViewControllerDelegate?

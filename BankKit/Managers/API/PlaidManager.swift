@@ -10,14 +10,14 @@ import Foundation
 import LinkKit
 import Reachability
 
-class PlaidManager {
-    static let shared = PlaidManager()
+public class PlaidManager {
+    public static let shared = PlaidManager()
     /// The app group to use to store account information
     static let groupIdentifier = "group.madebyayden.ios.Bank"
     /// The name of the notification fired when the status of Plaid Manager changes.
-    static let statusChangedNotification = Notification.Name(rawValue: "PlaidManagerStatusChangedNotificationName")
-    var api: PlaidAPI!
-    var reachability = Reachability()!, userDefaults: UserDefaults!
+    public static let statusChangedNotification = Notification.Name(rawValue: "PlaidManagerStatusChangedNotificationName")
+    public var api: PlaidAPI!
+    public var reachability = Reachability()!, userDefaults: UserDefaults!
     
     private init() {
         // Create API manager with our API info
@@ -37,7 +37,7 @@ class PlaidManager {
     }
     
     /// Setup the Plaid Manager for use, if connected to the internet. If not, wait until we are.
-    func setupWhenConnected() {
+    public func setupWhenConnected() {
         guard reachability.connection == .none else { setup(); return }
         print("Internet is not currently reachable. Waiting until the next time the user connects to the internet before setting up Plaid Link...")
         reachability.whenReachable = { _ in
@@ -47,7 +47,7 @@ class PlaidManager {
     }
     
     /// Setup the Plaid Manager for use.
-    func setup() {
+    public func setup() {
         // We don't need to set it up more than once.
         if status.isReady {
             print("Not setting up Plaid Link, as it is already ready for use.")
@@ -68,7 +68,7 @@ class PlaidManager {
     // MARK: - Storage
     
     /// The currently stored Plaid public token.
-    var accessToken: String? {
+    public var accessToken: String? {
         get { return userDefaults.string(forKey: "PlaidAccessToken") }
         set { userDefaults.set(newValue, forKey: "PlaidAccessToken") }
     }
@@ -76,7 +76,7 @@ class PlaidManager {
     // MARK: - Status
     
     /// The current status of the Plaid Manager.
-    var status: Status {
+    public var status: Status {
         // Return private status variable
         return _status
     }
@@ -92,11 +92,11 @@ class PlaidManager {
 // MARK: - Add PlaidManager Status enum
 extension PlaidManager {
     /// An enum for showing the current status of the Plaid Manager.
-    enum Status {
+    public enum Status {
         case ready, notReady, failed(Error?)
         
         /// Whether the status represents one that is ready or not.
-        var isReady: Bool {
+        public var isReady: Bool {
             switch self {
             case .ready: return true
             default: return false
@@ -104,7 +104,7 @@ extension PlaidManager {
         }
         
         /// The status's error, if applicable.
-        var error: Error? {
+        public var error: Error? {
             switch self {
             case .failed(let error): return error
             default: return nil
@@ -116,14 +116,14 @@ extension PlaidManager {
 // MARK: - Add Plaid Info
 extension PlaidManager {
     /// Information about the current Plaid API being used by the app.
-    struct PlaidInfo {
+    public struct PlaidInfo {
         let publicKey: String, secret: String, clientID: String, environment: Environment
         
-        var baseURL: String {
+        public var baseURL: String {
             return "https://\(environment).plaid.com/"
         }
         
-        var configuration: PLKConfiguration {
+        public var configuration: PLKConfiguration {
             let config = PLKConfiguration(key: publicKey, env: environment.linkEnvironment, product: .transactions)
             config.clientName = "Bank for iOS"
             return config
@@ -146,7 +146,7 @@ extension PlaidManager {
         }
     }
     
-    var info: PlaidInfo {
+    public var info: PlaidInfo {
         // Read Plaid.plist from main bundle
         guard let plistURL = Bundle.main.url(forResource: "Plaid", withExtension: "plist"), let plistData = try? Data(contentsOf: plistURL), let info = (try? PropertyListSerialization.propertyList(from: plistData, options: [], format: nil)) as? [String: String] else { fatalError("Invalid or non-existant Plaid info .plist file was provided.") }
         // Get configuration from Plaid.plist

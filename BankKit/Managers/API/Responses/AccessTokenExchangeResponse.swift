@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct AccessTokenExchangeResponse: PlaidResponse {
+public struct AccessTokenExchangeResponse: PlaidResponse {
     let accessToken: String
     
     enum CodingKeys: String, CodingKey {

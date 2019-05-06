@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PlaidAPI {
+public class PlaidAPI {
     let rootServerURL: String, clientID: String, secret: String
     let debugEnabled = true
     

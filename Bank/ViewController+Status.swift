@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import BankKit
 
 // MARK: - View controller status handling
 extension ViewController {

@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol PlaidResponse: Codable {}
+public protocol PlaidResponse: Codable {}
 
 extension PlaidResponse {
     static func decode(from data: Data) -> Self? {

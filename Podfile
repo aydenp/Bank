@@ -5,8 +5,14 @@ target 'Bank' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
+  pod 'SwiftChart', :git => 'https://github.com/aydenp/SwiftChart.git'
+end
+
+target 'BankKit' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
   # Pods for Bank
   pod 'Plaid'
   pod 'ReachabilitySwift'
-  pod 'SwiftChart', :git => 'https://github.com/aydenp/SwiftChart.git'
 end

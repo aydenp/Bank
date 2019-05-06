@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ErrorResponse: PlaidResponse {
+public struct ErrorResponse: PlaidResponse {
     let errorType: String, code: String, message: String, displayMessage: String?
     
     enum CodingKeys: String, CodingKey {

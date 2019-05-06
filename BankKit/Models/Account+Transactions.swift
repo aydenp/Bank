@@ -9,11 +9,11 @@
 import Foundation
 
 extension Account {
-    var transactions: [Transaction] {
+    public var transactions: [Transaction] {
         return SessionDataStorage.shared.transactions(for: self)
     }
     
-    func getBalanceHistoricalData(from startDate: Date? = nil, completionHandler: @escaping ([(Date, Double)]) -> Void) {
+    public func getBalanceHistoricalData(from startDate: Date? = nil, completionHandler: @escaping ([(Date, Double)]) -> Void) {
         OperationQueue().addOperation {
             // Get transactions, oldest first
             let transactions = self.transactions.sorted { $0.date < $1.date }

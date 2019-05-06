@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct InstitutionResponse: PaginatingPlaidResponse {
-    let institutions: [Institution]
-    let total: Int
+public struct InstitutionResponse: PaginatingPlaidResponse {
+    public let institutions: [Institution]
+    public let total: Int
 }
