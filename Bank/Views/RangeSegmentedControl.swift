@@ -66,8 +66,8 @@ class RangeSegmentedControl: UISegmentedControl {
     
     private func setColours() {
         tintColor = .clear
-        setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor(white: 0.7569, alpha: 1), NSAttributedStringKey.font: UIFont.systemFont(ofSize: 15, weight: .bold)], for: .normal)
-        setTitleTextAttributes([NSAttributedStringKey.foregroundColor: Colours.main], for: .selected)
+        setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(white: 0.7569, alpha: 1), NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15, weight: .bold)], for: .normal)
+        setTitleTextAttributes([NSAttributedString.Key.foregroundColor: Colours.main], for: .selected)
         selectionView.backgroundColor = Colours.main
     }
 }

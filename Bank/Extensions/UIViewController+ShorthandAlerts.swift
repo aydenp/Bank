@@ -10,7 +10,7 @@ import UIKit
 extension UIViewController {
     
     /// Show an alert on the view controller.
-    func showAlert(title: String? = nil, message: String? = nil, preferredStyle: UIAlertControllerStyle = .alert, actions: [UIAlertAction] = [.ok], completion: (() -> Void)? = nil) {
+    func showAlert(title: String? = nil, message: String? = nil, preferredStyle: UIAlertController.Style = .alert, actions: [UIAlertAction] = [.ok], completion: (() -> Void)? = nil) {
         if !Thread.isMainThread {
             DispatchQueue.main.async {
                 self.showAlert(title: title, message: message, preferredStyle: preferredStyle, actions: actions, completion: completion)
@@ -22,7 +22,7 @@ extension UIViewController {
     }
     
     /// Show an alert on the view controller.
-    func showAlert(title: String? = nil, message: String? = nil, preferredStyle: UIAlertControllerStyle = .alert, action: UIAlertAction, completion: (() -> Void)? = nil) {
+    func showAlert(title: String? = nil, message: String? = nil, preferredStyle: UIAlertController.Style = .alert, action: UIAlertAction, completion: (() -> Void)? = nil) {
         showAlert(title: title, message: message, preferredStyle: preferredStyle, actions: [action], completion: completion)
     }
     
@@ -30,7 +30,7 @@ extension UIViewController {
 
 extension UIAlertController {
     
-    static func createAlert(title: String? = nil, message: String? = nil, preferredStyle: UIAlertControllerStyle = .alert, actions: [UIAlertAction] = [.ok], completion: (() -> Void)? = nil) -> UIAlertController {
+    static func createAlert(title: String? = nil, message: String? = nil, preferredStyle: UIAlertController.Style = .alert, actions: [UIAlertAction] = [.ok], completion: (() -> Void)? = nil) -> UIAlertController {
         let alert = self.init(title: title, message: message, preferredStyle: preferredStyle)
         actions.forEach({ alert.addAction($0) })
         return alert

@@ -29,7 +29,7 @@ class AmountLabel: UILabel {
     }
     
     /// The attributes to use when making the attributed string (for the main number)
-    private var attributes: [NSAttributedStringKey: Any] {
+    private var attributes: [NSAttributedString.Key: Any] {
         return [.foregroundColor: colourToUse, .font: font]
     }
     

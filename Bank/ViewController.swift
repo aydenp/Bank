@@ -96,7 +96,7 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource, UIPa
     
     var currentIndex: Int? {
         guard let account = currentViewController?.account else { return nil }
-        return SessionDataStorage.shared.accounts?.index(of: account)
+        return SessionDataStorage.shared.accounts?.firstIndex(of: account)
     }
     
     var currentViewController: AccountViewController? {
@@ -128,14 +128,14 @@ class ViewController: UIPageViewController, UIPageViewControllerDataSource, UIPa
     // MARK: - Page View Controller Data Source
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        guard let account = (viewController as? AccountViewController)?.account, let index = SessionDataStorage.shared.accounts?.index(of: account) else { return nil }
+        guard let account = (viewController as? AccountViewController)?.account, let index = SessionDataStorage.shared.accounts?.firstIndex(of: account) else { return nil }
         let newIndex = index + 1
         guard newIndex >= 0 && newIndex < SessionDataStorage.shared.accounts!.count else { return nil }
         return getViewController(for: newIndex)
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        guard let account = (viewController as? AccountViewController)?.account, let index = SessionDataStorage.shared.accounts?.index(of: account) else { return nil }
+        guard let account = (viewController as? AccountViewController)?.account, let index = SessionDataStorage.shared.accounts?.firstIndex(of: account) else { return nil }
         let newIndex = index - 1
         guard newIndex >= 0 && newIndex < SessionDataStorage.shared.accounts!.count else { return nil }
         return getViewController(for: newIndex)

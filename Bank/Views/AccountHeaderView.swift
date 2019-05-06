@@ -58,7 +58,7 @@ class AccountHeaderView: UIView, ChartDelegate {
     private var selectedRange: ChartViewRange {
         get { return ChartViewRange.allOptions[chartSegmentedControl.selectedSegmentIndex] }
         set {
-            guard let index = ChartViewRange.allOptions.index(of: newValue) else { return }
+            guard let index = ChartViewRange.allOptions.firstIndex(of: newValue) else { return }
             chartSegmentedControl.selectedSegmentIndex = index
         }
     }
